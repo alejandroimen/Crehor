@@ -1,0 +1,15 @@
+.card-materia {
+    display: flex;
+    justify-content: space-between;
+    width: 19vw;
+    border-radius: 20px;
+    border: solid 1px rgb(60, 138, 187);
+    box-sizing: border-box;
+    padding: 40px;
+    margin: 0%;
+}
+
+.card-materia div h3 {
+    font-size: 24px;
+    margin: 0%;
+}
