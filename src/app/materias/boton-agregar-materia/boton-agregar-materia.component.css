@@ -1,0 +1,20 @@
+.boton-agregar-materia {
+    display: grid;
+    place-items: center;
+    width: 20vw;
+    height: auto;
+    border-radius: 20px;
+    border: solid 2px var(--azul);
+    box-sizing: border-box;
+    padding: 30px 40px;
+    background: none;
+    color: var(--azul);
+    font-size: 15vh;
+    font-weight: lighter;
+    transition: 0.3s;
+}
+
+.boton-agregar-materia:hover {
+    background-color: var(--cielo);;
+    transition: 0.3s;
+}
