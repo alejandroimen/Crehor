@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Imateria } from './materias/imateria';
+import { Iprofesor } from './profesores/interfaces/Iprofesor';
 
 @Component({
   selector: 'app-root',
@@ -50,8 +51,39 @@ export class AppComponent {
       estado: true
     }
   ]
+  profesores: Iprofesor[] = [
+    {
+      nombre: 'Julian',
+      apellido: 'Hernandez',
+      telefono: '961234567',
+      especialidad: 'Física',
+      titulo: 'Maestría'
+    },
+    {
+      nombre: 'Araceli',
+      apellido: 'Gutierrez',
+      telefono: '961234567',
+      especialidad: 'Humanidades',
+      titulo: 'Maestría'
+    },
+    {
+      nombre: 'Beatriz',
+      apellido: 'Pinzon',
+      telefono: '961234567',
+      especialidad: 'Estadistica',
+      titulo: 'Doctorado'
+    },
+    {
+      nombre: 'Armando',
+      apellido: 'Mendoza',
+      telefono: '961234567',
+      especialidad: 'Finanzas',
+      titulo: 'Doctorado'
+    }
+  ]
 
   ngOnInit(){
     localStorage.setItem("listaMaterias", JSON.stringify(this.materias));
+    localStorage.setItem("listaProfesores", JSON.stringify(this.profesores))
   }
 }

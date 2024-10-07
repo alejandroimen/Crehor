@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MateriasModule } from './materias/materias.module';
+import { ProfesoresModule } from "./profesores/profesores.module";
 
 @NgModule({
   declarations: [
@@ -13,8 +14,9 @@ import { MateriasModule } from './materias/materias.module';
     BrowserModule,
     AppRoutingModule,
     MateriasModule,
-    HttpClientModule
-  ],
+    HttpClientModule,
+    ProfesoresModule
+],
   providers: [],
   bootstrap: [AppComponent]
 })
