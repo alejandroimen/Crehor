@@ -1,0 +1,19 @@
+.boton-agregar-profesor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80vw;
+    height: 9vh;
+    border-radius: 15px;
+    border: solid var(--azul) 3px;
+    margin-bottom: 10px;
+    padding: 0px 20px;
+    background-color: var(--celeste);
+    color: var(--blanco);
+    font-size: 6vh;
+    transition: .3s;
+}
+.boton-agregar-profesor:hover {
+    filter: brightness(.75);
+    transition: .3s;
+}

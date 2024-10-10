@@ -1,11 +1,12 @@
 .card-materia {
+    position: relative;
     display: flex;
     justify-content: space-between;
-    min-width: 19vw;
+    min-width: 100%;
     border-radius: 20px;
     border: solid 2px var(--azul);
     box-sizing: border-box;
-    padding: 40px;
+    padding: 30px;
     margin: 0%;
 }
 

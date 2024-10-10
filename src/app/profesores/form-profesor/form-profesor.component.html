@@ -1,0 +1,14 @@
+<form class="form"  *ngIf="isOpen" action="">
+    <label for="">Nombre</label>
+    <input id="nombre" type="text" placeholder="Nombre" name="nombre" [(ngModel)]="prof.nombre" /> 
+    <label for="">Apellido(s)</label>
+    <input id="codigo" type="text" placeholder="Apellido" name="codigo" [(ngModel)]="prof.apellido" /> 
+    <label for="">Telefono</label>
+    <input id="grado" type="text" placeholder="Grado" class="numero" name="telefono" [(ngModel)]="prof.telefono" />
+    <select name="especialidad" id="especialidad" [(ngModel)]="prof.especialidad">
+        <option *ngFor="let espe of especialidades" value={{espe.id}} > {{espe.nombre}} </option>
+    </select>
+    <label for="">Titulo</label>
+    <input id="numCreditos" type="text" placeholder="Titulo" name="titulo" [(ngModel)]="prof.titulo" />
+    <button type="button" (click)="addMateria()">Agregar</button>
+</form>
