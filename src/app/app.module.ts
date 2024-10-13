@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MateriasModule } from './materias/materias.module';
 import { ProfesoresModule } from "./profesores/profesores.module";
+import { HorarioModule } from "./horario/horario.module";
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ProfesoresModule } from "./profesores/profesores.module";
     AppRoutingModule,
     MateriasModule,
     HttpClientModule,
-    ProfesoresModule
+    ProfesoresModule,
+    HorarioModule
 ],
   providers: [],
   bootstrap: [AppComponent]
