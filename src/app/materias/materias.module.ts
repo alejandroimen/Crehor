@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { SelectorMateriasComponent } from './selector-materias/selector-materias.component';
 import { MateriaCardComponent } from './materia-card/materia-card.component';
@@ -17,7 +18,8 @@ import { BotonAgregarMateriaComponent } from './boton-agregar-materia/boton-agre
     BotonAgregarMateriaComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     SelectorMateriasComponent

@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MateriasModule } from './materias/materias.module';
+import { ProfesoresModule } from "./profesores/profesores.module";
+import { HorarioModule } from "./horario/horario.module";
 
 @NgModule({
   declarations: [
@@ -11,8 +14,11 @@ import { MateriasModule } from './materias/materias.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MateriasModule
-  ],
+    MateriasModule,
+    HttpClientModule,
+    ProfesoresModule,
+    HorarioModule
+],
   providers: [],
   bootstrap: [AppComponent]
 })
