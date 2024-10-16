@@ -6,6 +6,7 @@ import { MateriaCardComponent } from './materia-card/materia-card.component';
 import { CardCompleteComponent } from './card-complete/card-complete.component';
 import { MateriaFormComponent } from './materia-form/materia-form.component';
 import { BotonAgregarMateriaComponent } from './boton-agregar-materia/boton-agregar-materia.component';
+import { VistaVisualizarMateriasComponent } from './vista-visualizar-materias/vista-visualizar-materias.component';
 
 
 
@@ -15,7 +16,8 @@ import { BotonAgregarMateriaComponent } from './boton-agregar-materia/boton-agre
     MateriaCardComponent,
     CardCompleteComponent,
     MateriaFormComponent,
-    BotonAgregarMateriaComponent
+    BotonAgregarMateriaComponent,
+    VistaVisualizarMateriasComponent
   ],
   imports: [
     CommonModule,

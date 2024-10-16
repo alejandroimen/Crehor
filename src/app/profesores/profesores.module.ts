@@ -6,6 +6,7 @@ import { ContainerProfesoresComponent } from './container-profesores/container-p
 import { BotonAgregarProfesorComponent } from './boton-agregar-profesor/boton-agregar-profesor.component';
 import { FormProfesorComponent } from './form-profesor/form-profesor.component';
 import { ProfesorLineSelectorComponent } from './profesor-line-selector/profesor-line-selector.component';
+import { VistaVisualizarProfesoresComponent } from './vista-visualizar-profesores/vista-visualizar-profesores.component';
 
 
 
@@ -15,7 +16,8 @@ import { ProfesorLineSelectorComponent } from './profesor-line-selector/profesor
     ContainerProfesoresComponent,
     BotonAgregarProfesorComponent,
     FormProfesorComponent,
-    ProfesorLineSelectorComponent
+    ProfesorLineSelectorComponent,
+    VistaVisualizarProfesoresComponent
   ],
   imports: [
     CommonModule, 
