@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Iprofesor } from '../interfaces/Iprofesor';
 
 @Component({
   selector: 'app-profesor-line-selector',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './profesor-line-selector.component.css'
 })
 export class ProfesorLineSelectorComponent {
-
+  @Input() prof: Iprofesor={
+    nombre: '',
+    apellido: '',
+    telefono: '',
+    especialidad: '',
+    titulo: ''
+  }
 }
