@@ -8,7 +8,7 @@ describe('VistaPrincipalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [VistaPrincipalComponent]
+      declarations: [VistaPrincipalComponent]
     })
     .compileComponents();
 
