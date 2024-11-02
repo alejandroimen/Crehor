@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MateriasModule } from './materias/materias.module';
 import { ProfesoresModule } from "./profesores/profesores.module";
 import { HorarioModule } from "./horario/horario.module";
+import { HeaderComponent } from './standalone/header/header.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,9 @@ import { HorarioModule } from "./horario/horario.module";
     MateriasModule,
     HttpClientModule,
     ProfesoresModule,
-    HorarioModule
+    HorarioModule,
+    HeaderComponent
+
 ],
   providers: [],
   bootstrap: [AppComponent]
