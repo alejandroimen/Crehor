@@ -21,3 +21,4 @@ import { HeaderComponent } from '../standalone/header/header.component';
   ]
 })
 export class VistasModule { }
+ 
