@@ -4,6 +4,7 @@
     --cielo: #DCF3FA;
     --blanco: white;
     --negro: black;
+    --rojo: red;
 }
 
 * {
@@ -14,6 +15,7 @@ body {
     margin: 0%;
     padding: 0%;
     display: flex;
+    box-sizing: border-box;
     flex-direction: column;
     justify-content: start;
     align-items: center;
@@ -65,4 +67,12 @@ body {
 .form button:hover {
     filter: brightness(.75);
     transition: .3s;
+}
+
+app-vista-principal,
+app-vista-materias,
+app-vista-profesores {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

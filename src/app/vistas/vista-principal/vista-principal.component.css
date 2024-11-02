@@ -1,19 +1,26 @@
-.vista {
+.vista-grupos {
     position: relative;
-    width: 100vw;
+    width: 85vw;
     display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2vw;
 }
 
-.add-btn {
-    width: 80%;
-    height: 45px;
-    background-color: var(--celeste);
+.btn-add-grupo {
+    width: 17vw;
+    height: 10vw;
+    border: solid 3px var(--azul);
+    border-radius: 20px;
+    box-sizing: border-box;
+    display: grid;
+    place-items: center;
+    font-size: 48px;
     color: var(--blanco);
-    font-size: 32px;
-    font-weight: 400;
-    border-radius: 10px;
-    border: solid 2px var(--azul);
+    background-color: var(--celeste);
+    transition: 0.2s;
+}
+.btn-add-grupo:hover {
+    filter: brightness(0.8);
+    transition: 0.2s;
 }

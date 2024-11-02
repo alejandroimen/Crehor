@@ -1,5 +1,4 @@
 import { Iprofesor } from './../interfaces/Iprofesor';
-import { Iespecialidad } from '../interfaces/Iespecialidad';
 import { Component, Input, Output } from '@angular/core';
 
 @Component({
@@ -10,7 +9,7 @@ import { Component, Input, Output } from '@angular/core';
 export class FormProfesorComponent  {
   @Input() isOpen: boolean = true
   profesores!: Iprofesor[]
-  especialidades!: Iespecialidad[]
+  especialidades!: string[]
   @Input() prof : Iprofesor = {
     nombre: '',
     apellido: '', 
@@ -26,7 +25,7 @@ export class FormProfesorComponent  {
     }
     let especialidadString = localStorage.getItem("listaEspecialidades")
     if(especialidadString){
-      this.especialidades = JSON.parse(especialidadString) as Iespecialidad[]
+      this.especialidades = JSON.parse(especialidadString) 
     }
   }
 

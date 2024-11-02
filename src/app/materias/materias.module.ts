@@ -22,7 +22,11 @@ import { VistaVisualizarMateriasComponent } from './vista-visualizar-materias/vi
     FormsModule
   ],
   exports: [
-    SelectorMateriasComponent
+    SelectorMateriasComponent,
+    MateriaCardComponent,
+    CardCompleteComponent,
+    MateriaFormComponent,
+    VistaVisualizarMateriasComponent
   ]
 })
 export class MateriasModule {}

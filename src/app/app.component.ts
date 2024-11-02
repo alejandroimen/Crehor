@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Imateria } from './materias/imateria';
 import { Iprofesor } from './profesores/interfaces/Iprofesor';
-import { Iespecialidad } from './profesores/interfaces/Iespecialidad';
 
 @Component({
   selector: 'app-root',
@@ -82,23 +81,11 @@ export class AppComponent {
       titulo: 'Doctorado'
     }
   ]
-  especialidades: Iespecialidad[] = [
-    {
-      id: 0,
-      nombre: 'Electronica'
-    },
-    {
-      id: 1,
-      nombre: 'Sistemas'
-    },
-    {
-      id: 2,
-      nombre: 'Humanidades'
-    },
-    {
-      id: 3,
-      nombre: 'Física'
-    }
+  especialidades: string[] = [
+    'Fisica',
+    'Quimica',
+    'Sociales',
+    'Lengua'
   ]
 
   ngOnInit(){

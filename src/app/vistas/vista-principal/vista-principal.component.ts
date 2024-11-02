@@ -1,26 +1,27 @@
 import { Component } from '@angular/core';
 import { Horario } from '../../horario/interfaces/horario';
+import { Igrupo } from '../../grupos/interfaces/igrupo';
 @Component({
   selector: 'app-vista-principal',
   templateUrl: './vista-principal.component.html',
   styleUrl: './vista-principal.component.css'
 })
 export class VistaPrincipalComponent {
-  horarios: Horario[] = [
+  grupos: Igrupo[] = [
     {
-      dia: 1,
-      hora: 1,
-      materiaId: 1,
-      profrId:1,
-      grupoId: 1
+      grado: 1,
+      grp: 'A',
+      horarioAsignado: true
     },
     {
-      dia: 1,
-      hora: 1,
-      materiaId: 1,
-      profrId:1,
-      grupoId: 1
+      grado: 2,
+      grp: 'A',
+      horarioAsignado: true
+    },
+    {
+      grado: 2,
+      grp: 'B',
+      horarioAsignado: false
     }
-  ]
-
+  ] 
 }

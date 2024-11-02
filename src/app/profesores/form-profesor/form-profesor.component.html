@@ -6,7 +6,7 @@
     <label for="">Telefono</label>
     <input id="grado" type="text" placeholder="Grado" class="numero" name="telefono" [(ngModel)]="prof.telefono" />
     <select name="especialidad" id="especialidad" [(ngModel)]="prof.especialidad">
-        <option *ngFor="let espe of especialidades" value={{espe.id}} > {{espe.nombre}} </option>
+        <option *ngFor="let espe of especialidades" value={{espe}} > {{espe}} </option>
     </select>
     <label for="">Titulo</label>
     <input id="numCreditos" type="text" placeholder="Titulo" name="titulo" [(ngModel)]="prof.titulo" />

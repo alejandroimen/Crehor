@@ -6,11 +6,15 @@ import { MateriasModule } from '../materias/materias.module';
 import { GruposModule } from '../grupos/grupos.module';
 import { VistaPrincipalComponent } from './vista-principal/vista-principal.component';
 import { VistaProfesoresComponent } from './vista-profesores/vista-profesores.component';
+import { VistaHorariosComponent } from './vista-horarios/vista-horarios.component';
+import { VistaMateriasComponent } from './vista-materias/vista-materias.component';
 
 @NgModule({
   declarations: [
     VistaPrincipalComponent,
-    VistaProfesoresComponent
+    VistaProfesoresComponent,
+    VistaHorariosComponent,
+    VistaMateriasComponent
   ],
   imports: [
     CommonModule,

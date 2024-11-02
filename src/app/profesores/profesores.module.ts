@@ -23,7 +23,10 @@ import { VistaVisualizarProfesoresComponent } from './vista-visualizar-profesore
   ],
   exports: [
     ProfesorLineComponent,
-    ContainerProfesoresComponent
+    ContainerProfesoresComponent,
+    FormProfesorComponent,
+    ProfesorLineSelectorComponent,
+    VistaVisualizarProfesoresComponent
   ]
 })
 export class ProfesoresModule { }
