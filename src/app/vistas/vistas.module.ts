@@ -5,7 +5,6 @@ import { ProfesoresModule } from '../profesores/profesores.module';
 import { MateriasModule } from '../materias/materias.module';
 import { GruposModule } from '../grupos/grupos.module';
 import { VistaPrincipalComponent } from './vista-principal/vista-principal.component';
-import { HeaderComponent } from '../standalone/header/header.component';
 import { VistaProfesoresComponent } from './vista-profesores/vista-profesores.component';
 
 @NgModule({
@@ -18,11 +17,11 @@ import { VistaProfesoresComponent } from './vista-profesores/vista-profesores.co
     HorarioModule,
     ProfesoresModule,
     MateriasModule,
-    GruposModule,
-    HeaderComponent
+    GruposModule
   ],
   exports: [
-    VistaPrincipalComponent
+    VistaPrincipalComponent,
+    VistaProfesoresComponent
   ]
 })
 export class VistasModule { }
