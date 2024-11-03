@@ -7,6 +7,7 @@ import { Igrupo } from '../../grupos/interfaces/igrupo';
   styleUrl: './vista-principal.component.css'
 })
 export class VistaPrincipalComponent {
+  formVisible: boolean = false
   grupos: Igrupo[] = [
     {
       grado: 1,
@@ -24,4 +25,8 @@ export class VistaPrincipalComponent {
       horarioAsignado: false
     }
   ] 
+
+  changeVisibilityForm(): void {
+    this.formVisible = !this.formVisible
+  }
 }

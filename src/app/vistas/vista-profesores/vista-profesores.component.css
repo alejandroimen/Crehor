@@ -1,0 +1,12 @@
+.btn-add-profesor {
+    width: 100%;
+    height: 70px;
+    background-color: var(--celeste);
+    color: var(--blanco);
+    font-size: 48px;
+    font-weight: 400;
+    border-radius: 20px;
+    border: solid 3px var(--azul);
+    transition: .2s;
+    margin-bottom: 10px;
+}

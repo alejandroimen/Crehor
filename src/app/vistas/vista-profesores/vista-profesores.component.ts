@@ -6,6 +6,7 @@ import { Iprofesor } from '../../profesores/interfaces/Iprofesor';
   styleUrl: './vista-profesores.component.css'
 })
 export class VistaProfesoresComponent {
+  visibleForm: boolean = false
   profesores: Iprofesor[] = [
     {
       nombre: 'Armando',
@@ -29,4 +30,8 @@ export class VistaProfesoresComponent {
       titulo: 'Maestria'
     }
   ]
+
+  changeVisibilityForm(): void {
+    this.visibleForm = ! this.visibleForm
+  }
 }

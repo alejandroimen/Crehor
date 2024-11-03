@@ -7,6 +7,7 @@ import { Imateria } from '../../materias/imateria';
   styleUrl: './vista-materias.component.css'
 })
 export class VistaMateriasComponent {
+  visibleForm:boolean = false
   materias: Imateria[] = [
     {
       codigo: 'FBD',
@@ -41,5 +42,7 @@ export class VistaMateriasComponent {
       estado: true
     }
   ]
-
+  changeVisibility():void {
+    this.visibleForm = !this.visibleForm
+  }
 }
