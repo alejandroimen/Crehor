@@ -1,0 +1,7 @@
+<section>
+    <button class="btn-add-profesor" (click)="changeVisibilityForm()">+</button>
+    <app-form-profesor [(visible)]="visibleForm" *ngIf="visibleForm"></app-form-profesor>
+    <app-profesor-line 
+        *ngFor="let prof of profesores" [prof]="prof">
+    </app-profesor-line>
+</section>

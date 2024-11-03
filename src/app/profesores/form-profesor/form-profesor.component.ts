@@ -1,6 +1,5 @@
 import { Iprofesor } from './../interfaces/Iprofesor';
-import { Iespecialidad } from '../interfaces/Iespecialidad';
-import { Component, Input, Output } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-form-profesor',
@@ -8,9 +7,10 @@ import { Component, Input, Output } from '@angular/core';
   styleUrl: './form-profesor.component.css'
 })
 export class FormProfesorComponent  {
-  @Input() isOpen: boolean = true
+  @Input() visible: boolean = true
+  @Output() visibleChange = new EventEmitter<boolean>()
   profesores!: Iprofesor[]
-  especialidades!: Iespecialidad[]
+  especialidades!: string[]
   @Input() prof : Iprofesor = {
     nombre: '',
     apellido: '', 
@@ -26,8 +26,12 @@ export class FormProfesorComponent  {
     }
     let especialidadString = localStorage.getItem("listaEspecialidades")
     if(especialidadString){
-      this.especialidades = JSON.parse(especialidadString) as Iespecialidad[]
+      this.especialidades = JSON.parse(especialidadString) 
     }
+  }
+  
+  changeVisibility(): void {
+    this.visibleChange.emit(!this.visible);
   }
 
   addMateria(): void {

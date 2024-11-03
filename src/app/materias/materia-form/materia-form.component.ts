@@ -6,7 +6,7 @@ import { Imateria } from '../imateria';
   styleUrl: './materia-form.component.css'
 })
 export class MateriaFormComponent {
-  @Input() isOpen: boolean = true
+  @Input() visible: boolean = false
   materias!: Imateria[]
   @Input() materi : Imateria = {
     codigo: '',
@@ -17,12 +17,18 @@ export class MateriaFormComponent {
     estado: true
   }
   @Output() eventEmitter = new EventEmitter<Imateria>()
+  @Output() visibleChange = new EventEmitter<boolean>()
 
   ngOnInit(){
     let materiasString = localStorage.getItem("listaMaterias")
     if(materiasString){
       this.materias = JSON.parse(materiasString) as Imateria[]
     }
+  }
+
+
+  changeVisibility(): void {
+    this.visibleChange.emit(!this.visible); 
   }
 
   addMateria(): void {

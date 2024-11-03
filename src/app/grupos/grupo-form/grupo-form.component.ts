@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-grupo-form',
@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './grupo-form.component.css'
 })
 export class GrupoFormComponent {
+  @Input() visible: boolean = false
+  @Output() visibleChange = new EventEmitter<boolean>()
 
+  changeVisibility(): void {
+    this.visibleChange.emit(!this.visible)
+  }
 }

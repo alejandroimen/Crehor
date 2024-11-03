@@ -1,0 +1,9 @@
+<section class="vista-materias">
+    <button (click)="changeVisibility()" class="btn-add-materia">
+        +
+    </button>
+    <app-materia-form [(visible)]="visibleForm" *ngIf="visibleForm"></app-materia-form>
+    <app-materia-card *ngFor="let mat of materias"
+        [nombre]="mat.nombre" [codigo]="mat.codigo" [creditos]="mat.numCreditos" [grado]="mat.grado">
+    </app-materia-card>
+</section>

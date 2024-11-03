@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VistaHorarioComponent } from './vista-horario.component';
+import { GrupoCardComponent } from './grupo-card.component';
 
-describe('VistaHorarioComponent', () => {
-  let component: VistaHorarioComponent;
-  let fixture: ComponentFixture<VistaHorarioComponent>;
+describe('GrupoCardComponent', () => {
+  let component: GrupoCardComponent;
+  let fixture: ComponentFixture<GrupoCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [VistaHorarioComponent]
+      declarations: [GrupoCardComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(VistaHorarioComponent);
+    fixture = TestBed.createComponent(GrupoCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

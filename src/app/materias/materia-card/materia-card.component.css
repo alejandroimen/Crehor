@@ -2,17 +2,31 @@
     position: relative;
     display: flex;
     justify-content: space-between;
-    min-width: 100%;
+    width: 20vw;
+    height: 25vh;
     border-radius: 20px;
-    border: solid 2px var(--azul);
+    border: solid 3px var(--azul);
     box-sizing: border-box;
     padding: 30px;
     margin: 0%;
 }
 
+.card-materia div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .card-materia div h3 {
     font-size: 24px;
+    font-weight: 400;
     margin: 0%;
+}
+
+.card-materia h4 {
+    font-size: 36px;
+    margin: 0% 0 0 20px;
+    font-weight: lighter;
 }
 
 .card-materia:hover {

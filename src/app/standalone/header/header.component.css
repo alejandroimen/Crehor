@@ -4,9 +4,23 @@ header {
     height: 70px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 0px 40px 0px 20px;
+    box-sizing: border-box;
+    margin-bottom: 25px;
 }
 
 header img {
-    height: 80%;
+    height: 70%;
+}
+
+header nav {
+    display: flex;
+    gap: 20px;
+}
+
+header nav a {
+    color: var(--blanco);
+    text-decoration: none;
+    letter-spacing: .8px;
 }
