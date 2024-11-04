@@ -2,6 +2,7 @@ import { VistaPrincipalComponent } from './vistas/vista-principal/vista-principa
 import { VistaProfesoresComponent } from './vistas/vista-profesores/vista-profesores.component';
 import { VistaHorariosComponent } from './vistas/vista-horarios/vista-horarios.component';
 import { VistaMateriasComponent } from './vistas/vista-materias/vista-materias.component';
+import { VistaArmarHorarioComponent } from './vistas/vista-armar-horario/vista-armar-horario.component';
 import { VistaAgregarHorarioComponent } from './vistas/vista-agregar-horario/vista-agregar-horario.component';
 import { NgModule } from '@angular/core';
 import { VistasModule } from './vistas/vistas.module';
@@ -12,7 +13,8 @@ const routes:Routes = [
   {path: 'horarios', component: VistaHorariosComponent},
   {path: 'profs', component: VistaProfesoresComponent},
   {path: 'materias', component: VistaMateriasComponent},
-  {path: 'addmat', component: VistaAgregarHorarioComponent}
+  {path: 'addmat', component: VistaAgregarHorarioComponent},
+  {path: 'armarhor', component: VistaArmarHorarioComponent}
 ]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

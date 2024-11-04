@@ -19,9 +19,8 @@
                 [(profSelected)]="profSelected" 
                 [isSelected]="prof===profSelected"> 
             </app-profesor-line-selector>
-            <button (click)="debug()">DEBUG</button>
             <div class="botones-cursos">
-                <button class="btn-add-curso"> Agregar curso</button>
+                <button class="btn-add-curso" (click)="addCurso()"> Agregar curso</button>
                 <button class="btn-next" (click)="goNext()"> Siguiente</button>
             </div>
         </div>

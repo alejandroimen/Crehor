@@ -10,6 +10,7 @@ import { VistaProfesoresComponent } from './vista-profesores/vista-profesores.co
 import { VistaHorariosComponent } from './vista-horarios/vista-horarios.component';
 import { VistaMateriasComponent } from './vista-materias/vista-materias.component';
 import { VistaAgregarHorarioComponent } from './vista-agregar-horario/vista-agregar-horario.component';
+import { VistaArmarHorarioComponent } from './vista-armar-horario/vista-armar-horario.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { VistaAgregarHorarioComponent } from './vista-agregar-horario/vista-agre
     VistaProfesoresComponent,
     VistaHorariosComponent,
     VistaMateriasComponent,
-    VistaAgregarHorarioComponent
+    VistaAgregarHorarioComponent,
+    VistaArmarHorarioComponent
   ],
   imports: [
     CommonModule,

@@ -110,19 +110,29 @@ export class VistaAgregarHorarioComponent {
     }
   ]
 
-  constructor(private router: Router) {}
+  constructor(private _router: Router) {}
 
-  debug():void {
+  addCurso():void {
     let cursoAux:Icurso = {
       materia: this.matselected,
       grupo: this.grupoSelected,
       profr: this.profSelected
     }
+    let medida = this.cursos.length
     this.cursos.push(cursoAux)
     console.log(this.cursos);  
+    if(this.cursos.length>medida){
+      alert('exit o')
+    }
   }
 
   goNext(): void {
-    this.router.navigate(['/'])
+    if(this.cursos.length>0){
+      localStorage.setItem('listaCursosPorAnotar', JSON.stringify(this.cursos))
+      this._router.navigate(['/armarhor'])
+    }
+    else {
+      alert('Tienes que agregar al menos un curso')
+    }
   }
-}
+} 

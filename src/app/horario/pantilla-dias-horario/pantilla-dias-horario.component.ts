@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Imateria } from '../../materias/interfaces/imateria';
 @Component({
   selector: 'app-pantilla-dias-horario',
   templateUrl: './pantilla-dias-horario.component.html',
@@ -13,4 +13,12 @@ export class PantillaDiasHorarioComponent {
     "Jueves",
     "Viernes"
   ]
+  @Input() materiaCandidata: Imateria = {
+    codigo: '',
+    nombre: '',
+    numCreditos: 0,
+    horasPorSemana: 0,
+    grado: 0,
+    estado: true
+  }
 }
