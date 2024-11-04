@@ -1,0 +1,28 @@
+<section class="agregar-horario">
+    <div *ngIf="gruposVisibles" class="container-opciones-grupos">
+        <app-grupo-card *ngFor="let grupo of grupos"
+            [grado] = "grupo.grado" [grupo]="grupo.grp" [horario]="grupo.horarioAsignado">
+        </app-grupo-card>
+    </div>
+    <div class="materias-seleccionador">
+        <app-card-complete *ngFor="let mat of materias" [materia]="mat" 
+            [profr]="profSelected.nombre+' '+profSelected.apellido"
+            [(materiaSelected)]="matselected"
+            [isSelected] = "mat === matselected"
+        ></app-card-complete>
+    </div>
+    <div class="container-right-elements">
+        <div class="profesores-seleccionador">
+            <app-profesor-line-selector 
+                *ngFor="let prof of profesores"
+                [prof]="prof"
+                [(profSelected)]="profSelected" 
+                [isSelected]="prof===profSelected"> 
+            </app-profesor-line-selector>
+            <div class="botones-cursos">
+                <button class="btn-add-curso" (click)="addCurso()"> Agregar curso</button>
+                <button class="btn-next" (click)="goNext()"> Siguiente</button>
+            </div>
+        </div>
+    </div>
+</section>

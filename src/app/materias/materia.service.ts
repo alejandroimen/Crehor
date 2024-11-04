@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Imateria } from './imateria';
+import { Imateria } from './interfaces/imateria';
 
 @Injectable({
   providedIn: 'root'

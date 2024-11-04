@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Imateria } from './materias/imateria';
+import { Imateria } from './materias/interfaces/imateria';
 import { Iprofesor } from './profesores/interfaces/Iprofesor';
 
 @Component({

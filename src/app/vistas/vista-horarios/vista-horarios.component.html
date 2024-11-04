@@ -1,7 +1,7 @@
 <div class="vista-horarios">
-    <a routerLink="" class="add-btn">+</a>
+    <a routerLink="/addmat" class="add-btn">+</a>
     <div class="horario-grupo" *ngFor="let horario of horarios">
-        <p>Horario {{horario.grupoId}}o A</p>
+        <p>Horario {{horario.curso.grupo.grado}}o A</p>
         <div class="icons-actions">
             <i class="fa-solid fa-pen"></i>
             <i class="fa-solid fa-trash delete"></i>

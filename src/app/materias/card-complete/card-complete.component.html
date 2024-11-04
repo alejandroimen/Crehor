@@ -1,11 +1,11 @@
-<div>
-    <div>   
-        <h3> {{nombre}} </h3>
-        <span> {{codigo}} </span>
-        <p> {{creditos}} </p>
+<button [class.selected]= "isSelected" class="card-complete" (click)="seleccionar()">
+    <div class="left-side-card">   
+        <h3> {{materia.nombre}} </h3>
+        <span> {{materia.codigo}} </span>
+        <p> {{materia.numCreditos}} </p>
         <p> {{profr}} </p> 
 
-        <p> {{horas}} </p>
+        <p> {{materia.horasPorSemana}} </p>
     </div>
-    <h4> {{grado}} </h4>
-</div>
+    <h4> {{materia.grado}} </h4>
+</button>
