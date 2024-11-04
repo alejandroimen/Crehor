@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Imateria } from '../../materias/imateria';
+import { Imateria } from '../../materias/interfaces/imateria';
 
 @Component({
   selector: 'app-vista-materias',

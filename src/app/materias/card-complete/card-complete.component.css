@@ -1,0 +1,45 @@
+.card-complete {
+    background-color: var(--blanco);
+    position: relative;
+    border: 3px solid var(--azul);
+    border-radius: 20px;
+    padding: 30px;
+    box-sizing: border-box;
+    width: 14vw;
+    height: 36vh;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
+}
+
+.card-complete h4 {
+    font-size: 32px;
+    margin: 0%;
+}
+
+.left-side-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.left-side-card p,
+.left-side-card h3 {
+    margin: 0;
+}
+
+.left-side-card h3 {
+    font-size: 20px;
+    text-align: left;
+}
+.left-side-card span,
+.left-side-card p {
+    text-align: left;
+    font-size: 18px;
+}
+.selected {
+    background-color: var(--cielo);
+}

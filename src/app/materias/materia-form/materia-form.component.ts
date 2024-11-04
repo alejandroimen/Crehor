@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Imateria } from '../imateria';
+import { Imateria } from '../interfaces/imateria';
 @Component({
   selector: 'app-materia-form',
   templateUrl: './materia-form.component.html',

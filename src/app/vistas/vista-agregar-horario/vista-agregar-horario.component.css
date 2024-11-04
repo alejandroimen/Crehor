@@ -1,0 +1,72 @@
+.agregar-horario {
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.container-opciones-grupos {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vw;
+}
+
+.materias-seleccionador {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container-right-elements {
+    position: relative;
+}
+
+.profesores-seleccionador {
+    width: 62vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.botones-cursos {
+    position: fixed;
+    bottom: 5vh;
+    right: 10vw;
+    display: flex;
+    height: 10vh;
+    width: inherit;
+    box-sizing: border-box;
+    gap: 2vw;
+}
+
+.btn-add-curso {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 15px;
+    border: 3px solid var(--azul);
+    color: var(--azul);
+    font-size: 22px;
+    letter-spacing: 0.6px;
+    background-color: var(--blanco);
+    transition: 0.2s;
+}
+.btn-next {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 15px;
+    border: 3px solid var(--azul);
+    color: var(--blanco);
+    font-size: 22px;
+    letter-spacing: 0.6px;
+    background-color: var(--celeste);
+    transition: 0.2s;
+}
+
+.botones-cursos button:hover {
+    filter: brightness(0.8);
+    transition: 0.2s;
+}
