@@ -6,6 +6,7 @@ import { ContainerProfesoresComponent } from './container-profesores/container-p
 import { FormProfesorComponent } from './form-profesor/form-profesor.component';
 import { ProfesorLineSelectorComponent } from './profesor-line-selector/profesor-line-selector.component';
 import { VistaVisualizarProfesoresComponent } from './vista-visualizar-profesores/vista-visualizar-profesores.component';
+import { ConfirmarDeleteComponent } from './confirmar-delete/confirmar-delete.component';
 
 
 
@@ -15,7 +16,8 @@ import { VistaVisualizarProfesoresComponent } from './vista-visualizar-profesore
     ContainerProfesoresComponent,
     FormProfesorComponent,
     ProfesorLineSelectorComponent,
-    VistaVisualizarProfesoresComponent
+    VistaVisualizarProfesoresComponent,
+    ConfirmarDeleteComponent
   ],
   imports: [
     CommonModule, 
@@ -26,7 +28,8 @@ import { VistaVisualizarProfesoresComponent } from './vista-visualizar-profesore
     ContainerProfesoresComponent,
     FormProfesorComponent,
     ProfesorLineSelectorComponent,
-    VistaVisualizarProfesoresComponent
+    VistaVisualizarProfesoresComponent,
+    ConfirmarDeleteComponent
   ]
 })
 export class ProfesoresModule { }

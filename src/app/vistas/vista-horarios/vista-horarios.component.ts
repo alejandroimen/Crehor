@@ -11,7 +11,7 @@ import { Horario } from '../../horario/interfaces/horario';
 })
 export class VistaHorariosComponent {
   mat: Imateria = {
-    codigo: 'FBD',
+    codigo: 0,
     nombre: 'Fundamentos de bases de datos',
     numCreditos: 10,
     horasPorSemana: 6,
@@ -19,6 +19,7 @@ export class VistaHorariosComponent {
     estado: true
   }
   prof: Iprofesor =  {
+    codigo: '',
     nombre: 'Juanito',
     apellido: 'Alcachofa', 
     telefono: '961 123 4567',

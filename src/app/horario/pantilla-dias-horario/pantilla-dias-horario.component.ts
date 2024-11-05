@@ -14,7 +14,7 @@ export class PantillaDiasHorarioComponent {
     "Viernes"
   ]
   @Input() materiaCandidata: Imateria = {
-    codigo: '',
+    codigo: 0,
     nombre: '',
     numCreditos: 0,
     horasPorSemana: 0,

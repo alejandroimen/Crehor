@@ -10,7 +10,7 @@ export class VistaMateriasComponent {
   visibleForm:boolean = false
   materias: Imateria[] = [
     {
-      codigo: 'FBD',
+      codigo: 0,
       nombre: 'Fundamentos de bases de datos',
       numCreditos: 10,
       horasPorSemana: 6,
@@ -18,7 +18,7 @@ export class VistaMateriasComponent {
       estado: true
     },
     {
-      codigo: 'PRV',
+      codigo: 1,
       nombre: 'Programación Visual',
       numCreditos: 10,
       horasPorSemana: 7,
@@ -26,7 +26,7 @@ export class VistaMateriasComponent {
       estado: true
     },
     {
-      codigo: 'ALG',
+      codigo: 2,
       nombre: 'Algoritmos',
       numCreditos: 10,
       horasPorSemana: 8,
@@ -34,7 +34,7 @@ export class VistaMateriasComponent {
       estado: true
     },
     {
-      codigo: 'EDA',
+      codigo: 3,
       nombre: 'Estructuras de datos avanzadas',
       numCreditos: 10,
       horasPorSemana: 4,

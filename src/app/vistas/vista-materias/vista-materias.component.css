@@ -10,7 +10,7 @@
     display: grid;
     place-items: center;
     width: 20vw;
-    height: 25vh;
+    height: 30vh;
     border-radius: 20px;
     border: solid 3px var(--azul);
     box-sizing: border-box;

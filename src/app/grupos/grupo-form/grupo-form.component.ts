@@ -28,7 +28,7 @@ export class GrupoFormComponent {
       horarioAsignado: this.grupo.horarioAsignado
     }
     if(this.grupo.grado && this.grupo.grp){
-      this.grupoService.addGrupo(grupoAux)
+      this.grupoService.add(grupoAux)
       console.log(localStorage.getItem('listaGrupos'));
       this.visibleChange.emit(!this.visible)
     }

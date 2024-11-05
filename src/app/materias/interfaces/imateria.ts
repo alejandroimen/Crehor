@@ -1,5 +1,5 @@
 export interface Imateria {
-    codigo: string
+    codigo: number
     nombre: string
     numCreditos: number
     horasPorSemana: number
