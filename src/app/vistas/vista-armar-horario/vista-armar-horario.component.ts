@@ -9,7 +9,7 @@ import { Imateria } from '../../materias/interfaces/imateria';
 })
 export class VistaArmarHorarioComponent {
   matselected: Imateria = {
-    codigo: '',
+    codigo: 0,
     nombre: '',
     numCreditos: 0,
     horasPorSemana: 0,

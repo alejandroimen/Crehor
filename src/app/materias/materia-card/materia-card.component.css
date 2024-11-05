@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     width: 20vw;
-    height: 25vh;
+    height: 30vh;
     border-radius: 20px;
     border: solid 3px var(--azul);
     box-sizing: border-box;
@@ -11,13 +11,13 @@
     margin: 0%;
 }
 
-.card-materia div {
+.left-side {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.card-materia div h3 {
+.left-side h3 {
     font-size: 24px;
     font-weight: 400;
     margin: 0%;
@@ -33,4 +33,30 @@
     background-color: var(--cielo);
     color: var(--azul);
     transition: 0.3s;
+}
+
+.btn-actions {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    width: auto;
+    gap: 10px;
+}
+
+.btn-actions button {
+    position: relative;
+    width: 50%;
+    background: none;
+    border: none;
+    transition: 0.2s;
+}
+
+.btn-actions button i {
+    font-size: 18px;
+}
+
+.btn-actions button:hover {
+    transform: scale(1.4);
+    transition: 0.2s;
 }

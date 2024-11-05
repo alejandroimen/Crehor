@@ -1,37 +1,22 @@
 import { Component } from '@angular/core';
 import { Iprofesor } from '../../profesores/interfaces/Iprofesor';
+import { ProfesorService } from '../../profesores/services/profesor.service';
 @Component({
   selector: 'app-vista-profesores',
   templateUrl: './vista-profesores.component.html',
   styleUrl: './vista-profesores.component.css'
 })
 export class VistaProfesoresComponent {
+  visibleDelete:boolean = false
   visibleForm: boolean = false
-  profesores: Iprofesor[] = [
-    {
-      nombre: 'Armando',
-      apellido: 'Mendoza', 
-      telefono: '961 123 4567',
-      especialidad: 'Electronica',
-      titulo: 'Maestria'
-    },
-    {
-      nombre: 'Beatriz',
-      apellido: 'Pinzon', 
-      telefono: '961 321 4567',
-      especialidad: 'Biologia',
-      titulo: 'Maestria'
-    },
-    {
-      nombre: 'Juanito',
-      apellido: 'Alcachofa', 
-      telefono: '961 123 4567',
-      especialidad: 'Sociales',
-      titulo: 'Maestria'
-    }
-  ]
+  i: number = -1
+  profesores: Iprofesor[] = []
+
+  constructor(private profServ: ProfesorService){
+    this.profesores = profServ.getAll()
+  }
 
   changeVisibilityForm(): void {
-    this.visibleForm = ! this.visibleForm
+    this.visibleForm = !this.visibleForm
   }
 }

@@ -13,7 +13,7 @@ export class GruposService {
     return gruposGuardados ? (JSON.parse(gruposGuardados) as Igrupo[]) : []
   }
 
-  addGrupo(grupo: Igrupo){
+  add(grupo: Igrupo){
     let gruposGuardados = this.getAll()
     gruposGuardados.push(grupo)
     localStorage.setItem('listaGrupos', JSON.stringify(gruposGuardados))

@@ -1,8 +1,16 @@
 <div class="card-materia">
-    <div>   
+    <div class="left-side">   
         <h3> {{nombre}} </h3>
         <span> {{codigo}} </span>
         <p> {{creditos}} </p>
     </div>
     <h4> {{grado}}ᵒ </h4>
+    <div class="btn-actions">
+        <button (click)="openEdit()">
+            <i class="fa-solid fa-pen"></i> 
+        </button>
+        <button (click)="openDelete()">
+            <i class="fa-solid fa-trash" style="color: rgb(195, 23, 34);"></i>
+        </button>
+    </div>
 </div>

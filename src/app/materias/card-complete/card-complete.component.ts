@@ -13,7 +13,7 @@ export class CardCompleteComponent {
   @Output() materiaSelectedChange = new EventEmitter<Imateria>()
   @Input() isSelected: boolean = false
   @Input() materiaSelected: Imateria = {
-    codigo: '',
+    codigo: 0,
     nombre: '',
     numCreditos: 0,
     horasPorSemana: 0,
@@ -21,7 +21,7 @@ export class CardCompleteComponent {
     estado: false
   }
   @Input() materia: Imateria = {
-    codigo: '',
+    codigo: 0,
     nombre: '',
     numCreditos: 0,
     horasPorSemana: 0,

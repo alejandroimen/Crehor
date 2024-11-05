@@ -7,7 +7,14 @@ import { Component, Input } from '@angular/core';
 })
 export class MateriaCardComponent {
   @Input() nombre: string = ''
-  @Input() codigo: string = ''
+  @Input() codigo: number = 0
   @Input() creditos: number = 0
   @Input() grado: number = 0
+
+  openEdit(): void {
+
+  }
+  openDelete(): void {
+    
+  }
 }

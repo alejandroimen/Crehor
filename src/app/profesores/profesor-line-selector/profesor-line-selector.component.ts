@@ -10,6 +10,7 @@ export class ProfesorLineSelectorComponent {
   @Input() isSelected: boolean = false; 
   @Output() profSelectedChange = new EventEmitter<Iprofesor>()
   @Input() profSelected: Iprofesor={
+    codigo: '',
     nombre: '',
     apellido: '',
     telefono: '',
@@ -17,6 +18,7 @@ export class ProfesorLineSelectorComponent {
     titulo: ''
   }
   @Input() prof: Iprofesor={
+    codigo: '',
     nombre: '',
     apellido: '',
     telefono: '',

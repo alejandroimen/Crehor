@@ -11,7 +11,7 @@ export class AppComponent {
   title = 'App-web';
   materias: Imateria[] = [
     {
-      codigo: 'ALG',
+      codigo: 0,
       nombre: 'Algebra',
       numCreditos: 10,
       horasPorSemana: 5,
@@ -19,7 +19,7 @@ export class AppComponent {
       estado: true
     },
     {
-      codigo: 'FIS',
+      codigo: 1,
       nombre: 'Fisica',
       numCreditos: 10,
       horasPorSemana: 6,
@@ -27,7 +27,7 @@ export class AppComponent {
       estado: true
     },
     {
-      codigo: 'EXO',
+      codigo: 2,
       nombre: 'Expresion oral',
       numCreditos: 10,
       horasPorSemana: 3,
@@ -35,7 +35,7 @@ export class AppComponent {
       estado: true
     },
     {
-      codigo: 'QUI',
+      codigo: 3,
       nombre: 'Quimica',
       numCreditos: 10,
       horasPorSemana: 4,
@@ -43,7 +43,7 @@ export class AppComponent {
       estado: true
     },
     {
-      codigo: 'CAD',
+      codigo: 4,
       nombre: 'Calculo diferencial',
       numCreditos: 10,
       horasPorSemana: 6,
@@ -53,6 +53,7 @@ export class AppComponent {
   ]
   profesores: Iprofesor[] = [
     {
+      codigo: '',
       nombre: 'Julian',
       apellido: 'Hernandez',
       telefono: '961234567',
@@ -60,6 +61,7 @@ export class AppComponent {
       titulo: 'Maestría'
     },
     {
+      codigo: '',
       nombre: 'Araceli',
       apellido: 'Gutierrez',
       telefono: '961234567',
@@ -67,6 +69,7 @@ export class AppComponent {
       titulo: 'Maestría'
     },
     {
+      codigo: '',
       nombre: 'Beatriz',
       apellido: 'Pinzon',
       telefono: '961234567',
@@ -74,6 +77,7 @@ export class AppComponent {
       titulo: 'Doctorado'
     },
     {
+      codigo: '',
       nombre: 'Armando',
       apellido: 'Mendoza',
       telefono: '961234567',
