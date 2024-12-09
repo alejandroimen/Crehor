@@ -32,7 +32,13 @@ export class ProfesorService {
 
   edit(index: number, profesor: Iprofesor): Observable<any> {
     const headers = this.createAuthorizationHeader()
-    return this._http.put(`${this.url}/teachers/${index}`, profesor, { headers })
+    return this._http.put(`${this.url}/teachers/${index}`, {
+      name: profesor.name,
+      lastname: profesor.lastname,
+      phone: profesor.phone,
+      specialism: profesor.specialism,
+      degree: profesor.degree
+    }, { headers })
   }
 
   delete(index: number): Observable<any>{

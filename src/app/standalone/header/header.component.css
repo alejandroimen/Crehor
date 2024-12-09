@@ -24,3 +24,13 @@ header nav a {
     text-decoration: none;
     letter-spacing: .8px;
 }
+
+button {
+    background: none;
+    border: none;
+}
+
+button i {
+    color: var(--blanco);
+    font-size: 18px;
+}

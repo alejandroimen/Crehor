@@ -25,8 +25,10 @@ export class ProfesorLineComponent {
   }
   profesores: Iprofesor[] = []
   especialidades: Iespecialidad[] = []
+  teacherId: string = ''
 
   constructor(private profServ: ProfesorService, private speciServ: EspecialidadService){
+    this.teacherId=localStorage.getItem('teacherId') || ''
     profServ.getAll().subscribe(
       response => {
         this.profesores = response

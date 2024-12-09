@@ -1,3 +1,4 @@
+import { IHorarioShow } from './../interfaces/i-horario-show';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -22,8 +23,13 @@ export class HorarioService {
     return this.http.post(`${this.url}/schedules/${id}`, horario, { headers })
   }
 
-  getHorario(id: string): Observable<any>{
+  getHorario(id: string): Observable<IHorarioShow[]>{
     const headers = this.createAuthorizationHeader()
-    return this.http.get(`${this.url}/schedules/${id}`, { headers })
+    return this.http.get<IHorarioShow[]>(`${this.url}/schedules/${id}`, { headers })
+  }
+
+  getHorarioByTeacher(id: string): Observable<IHorarioShow[]> {
+    const headers = this.createAuthorizationHeader()
+    return this.http.get<IHorarioShow[]>(`${this.url}/schedules/teacher/${id}`, { headers })
   }
 }

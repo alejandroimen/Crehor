@@ -75,7 +75,9 @@ app-vista-materias,
 app-vista-profesores,
 app-vista-agregar-horario,
 app-vista-armar-horario,
-app-login-form {
+app-login-form,
+app-vista-visualizar-horario,
+app-horario-visible {
     display: flex;
     flex-direction: column;
     align-items: center;

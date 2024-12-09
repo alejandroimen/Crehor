@@ -24,6 +24,10 @@
 .ver-horario {
     margin: 20px 0px 0px 0px;
     font-weight: 600;
+    font-size: 14px;
+    width: 100%;
     color: var(--celeste);
     text-decoration: underline;
+    background: none;
+    border: none;
 }

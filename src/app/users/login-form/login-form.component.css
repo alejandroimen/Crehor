@@ -4,6 +4,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--cielo);
     box-sizing: border-box;
 }
 
@@ -12,8 +13,7 @@ section {
     width: 45vw;
     height: 60vh;
     background-color: var(--blanco);
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-radius: 20px;
     box-shadow: 0px 5px 8px var(--cielo);
     box-sizing: border-box;
     padding: 50px;

@@ -8,6 +8,7 @@ import { MateriaService } from '../materia.service';
   styleUrl: './vista-materias.component.css'
 })
 export class VistaMateriasComponent {
+  teacherId: string = ''
   update: boolean= false
   visibleDelete: boolean = false
   visibleForm: boolean = false
@@ -15,6 +16,7 @@ export class VistaMateriasComponent {
   materias: Imateria[] = []
 
   constructor(private matServ: MateriaService) { 
+    this.teacherId=localStorage.getItem('teacherId') || ''
     this.matServ.getAll().subscribe(
       response => {
         this.materias = response

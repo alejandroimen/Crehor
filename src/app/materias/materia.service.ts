@@ -30,11 +30,11 @@ export class MateriaService {
 
   edit(index: number, materia: Imateria): Observable<any> {
     const headers = this.createAuthorizationHeader()
-    return this._http.put(`this.url${index}`, materia, { headers })
+    return this._http.put(`${this.url}${index}`, materia, { headers })
   }
 
   delete(index: number): Observable<any>{
     const headers = this.createAuthorizationHeader()
-    return this._http.delete(`this.url${index}`, { headers })
+    return this._http.delete(`${this.url}${index}`, { headers })
   }
 }

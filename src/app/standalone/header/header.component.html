@@ -3,7 +3,7 @@
     <nav>
         <a routerLink="/profs">Profesores</a>
         <a routerLink="/materias">Materias</a>
-        <a routerLink="/horarios">Horarios</a>
-        <a routerLink="/"><i class="fa-solid fa-house"></i></a>
+        <a routerLink="/horarios" *ngIf="teacherId==='16'" >Horarios</a>
+        <button (click)="goHome()"><i class="fa-solid fa-house"></i></button>
     </nav>
 </header>       
