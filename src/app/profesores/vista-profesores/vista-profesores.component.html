@@ -1,5 +1,5 @@
 <section>
-    <button class="btn-add-profesor" (click)="changeVisibilityForm()">+</button>
+    <button *ngIf="teacherId==='16'" class="btn-add-profesor" (click)="changeVisibilityForm()">+</button>
     <app-confirmar-delete *ngIf="visibleDelete" [(i)]="i" [(visible)]="visibleDelete"></app-confirmar-delete>
     <app-form-profesor [(profesores)]="profesores" [(i)]="i" [(visible)]="visibleForm" *ngIf="visibleForm"></app-form-profesor>
     <app-profesor-line 

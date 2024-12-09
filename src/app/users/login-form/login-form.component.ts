@@ -55,9 +55,12 @@ export class LoginFormComponent {
         localStorage.setItem('userId', decodedToken.id);
         localStorage.setItem('teacherId', decodedToken.teachId);
         localStorage.setItem('username', this.user.name);
- 
-        this.router.navigate(['/']);
-        this.isSubmitting = false;
+        if(decodedToken.teachId===16){
+          this.router.navigate(['/']);
+          this.isSubmitting = false;
+        }else {
+          this.router.navigate(['/home-teacher', decodedToken.teachId])
+        }
       },
       error => {
         /* this.alertService.showError('Hubo un error al iniciar sesión.'); */

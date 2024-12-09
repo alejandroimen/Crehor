@@ -1,10 +1,10 @@
 <section class="vista-materias">
-    <button (click)="changeVisibility()" class="btn-add-materia">
+    <button (click)="changeVisibility()" class="btn-add-materia" *ngIf="teacherId==='16'">
         +
     </button>
     <app-confirmar-delete-materia *ngIf="visibleDelete" [(i)]="i" [(visible)]="visibleDelete" [(update)]="update">
     </app-confirmar-delete-materia>
-    <app-materia-form [(visible)]="visibleForm" *ngIf="visibleForm" [(update)]="update">
+    <app-materia-form [(i)]="i" [(visible)]="visibleForm" *ngIf="visibleForm" [(update)]="update">
     </app-materia-form>
     <app-materia-card *ngFor="let mat of materias"
         [(i)]="i" [(visible)]="visibleForm" [(visibleDelete)]="visibleDelete" 

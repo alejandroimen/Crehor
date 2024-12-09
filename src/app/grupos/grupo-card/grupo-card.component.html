@@ -3,6 +3,6 @@
         {{grado}}o
         {{grupo}}
     </h4>
-    <a class="ver-horario" *ngIf="horario">Ver horario</a>
+    <button class="ver-horario" *ngIf="horario" (click)="goToSchedule()" >Ver horario</button>
     <p *ngIf="!horario">Sin horario asignado</p>
 </div>

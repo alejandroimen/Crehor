@@ -7,6 +7,8 @@ import { VistaAgregarHorarioComponent } from './horario/vista-agregar-horario/vi
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginFormComponent } from './users/login-form/login-form.component';
+import { VistaVisualizarHorarioComponent } from './horario/vista-visualizar-horario/vista-visualizar-horario.component';
+import { HorarioVisibleComponent } from './horario/horario-visible/horario-visible.component';
 
 const routes:Routes = [
   {path: '', component: VistaPrincipalComponent},
@@ -15,7 +17,9 @@ const routes:Routes = [
   {path: 'materias', component: VistaMateriasComponent},
   {path: 'addmat', component: VistaAgregarHorarioComponent},
   {path: 'armar-horario', component: VistaArmarHorarioComponent},
-  {path: 'login', component: LoginFormComponent}
+  {path: 'login', component: LoginFormComponent},
+  {path: 'horario/:id', component: VistaVisualizarHorarioComponent},
+  {path: 'home-teacher/:id', component: HorarioVisibleComponent}
 ]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

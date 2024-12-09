@@ -15,11 +15,14 @@ export class VistaProfesoresComponent {
   i: number = -1
   profesores: Iprofesor[] = []
   especialidades: Iespecialidad[] = []
+  teacherId:string = ''
 
   constructor(private profServ: ProfesorService, private speciServ: EspecialidadService){
+    this.teacherId=localStorage.getItem('teacherId') || ''
     profServ.getAll().subscribe(
       response => {
         this.profesores = response
+        this.profesores.shift()
         console.log(this.profesores);
       },
       error => {

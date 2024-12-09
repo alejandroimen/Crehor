@@ -50,8 +50,12 @@ export class VistaHorariosComponent {
     );
   }
 
-  goToPage(grupoId: number): void {
-    localStorage.setItem('group', grupoId.toString())
-    this.router.navigate(['/addmat'])
+  goToPage(grupo: Igrupo): void {
+    if(!grupo.hasSchedule){
+      localStorage.setItem('group', grupo.id.toString())
+      this.router.navigate(['/addmat'])
+    }else {
+      this.router.navigate(['/horario', grupo.id])
+    }
   }
 }

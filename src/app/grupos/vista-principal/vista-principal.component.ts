@@ -11,10 +11,12 @@ import { GruposService } from '../services/grupos.service';
 export class VistaPrincipalComponent {
   formVisible: boolean = false
   grupos: Igrupo[] = []
+  teacherId: string = ''
 
   constructor(private grpSrv: GruposService){}
 
   ngOnInit(){
+    this.teacherId=localStorage.getItem('teacherId') || ''
     this.grpSrv.getAll().subscribe(
       data => {
         this.grupos = data
