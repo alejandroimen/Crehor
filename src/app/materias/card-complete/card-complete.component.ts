@@ -10,30 +10,39 @@ import { Igrupo } from '../../grupos/interfaces/igrupo';
 })
 export class CardCompleteComponent {
   @Output() unselected = new EventEmitter<boolean>()
-  @Output() materiaSelectedChange = new EventEmitter<Imateria>()
+  @Input() cursoSelected: Icurso = {
+    materia:{
+      id: 0,
+      name: '',
+      credits: 0,
+      hours:0,
+      grade: 0,
+      state: true
+    },
+    profr: {
+      id: 0,
+      name: '',
+      lastname: '',
+      phone: '',
+      specialism: 0,
+      degree: ''
+    },
+    grupo: {
+      id: 0,
+      grade: 0,
+      group: '',
+      hasSchedule: false
+    }
+  }
+  @Output() cursoSelectedChange = new EventEmitter<Icurso>()
   @Input() isSelected: boolean = false
-  @Input() materiaSelected: Imateria = {
-    codigo: 0,
-    nombre: '',
-    numCreditos: 0,
-    horasPorSemana: 0,
-    grado: 0,
-    estado: false
-  }
-  @Input() materia: Imateria = {
-    codigo: 0,
-    nombre: '',
-    numCreditos: 0,
-    horasPorSemana: 0,
-    grado: 0,
-    estado: false
-  }
-  @Input() profr: string = ''
+  @Input() curso!: Icurso
+
 
   seleccionar(): void {
     this.unselected.emit(false)
-    this.materia.estado = true
-    this.materiaSelectedChange.emit(this.materia)
-    console.log('curso: ', this.materia)
+    this.curso.materia.state = true
+    this.cursoSelectedChange.emit(this.curso)
+    console.log('curso: ', this.curso)
   }
 }

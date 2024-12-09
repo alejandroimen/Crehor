@@ -1,32 +1,31 @@
 <div class="container-form">
     <form class="form" action="">
         <div class="header-form">
-            <h1>Agregar profesor</h1>
+            <h1>Agregar materia</h1>
             <button class="close-btn" (click)="changeVisibility()">x</button>
         </div>
         <label for="">Nombre</label>
-        <input id="nombre" type="text" placeholder="Nombre" name="nombre" [(ngModel)]="materi.nombre" /> 
-        <label for="">Codigo de materia</label>
-        <input id="codigo" type="text" placeholder="Codigo" name="codigo" [(ngModel)]="materi.codigo" /> 
-        <select [value]="" name="estado" id="estado" [(ngModel)]="materi.estado">
-            <option value="True">Activa</option>
-            <option value="False">Inactiva</option>
+        <input id="name" type="text" placeholder="Nombre" name="name" [(ngModel)]="materi.name" /> 
+        <select [value]="" name="state" id="state" [(ngModel)]="materi.state">
+            <option value="" disabled selected>Selecciona una opcion</option>
+            <option [value]="true">Activa</option>
+            <option [value]="false">Inactiva</option>
         </select>
         <div>
             <div class="numeros-input">
                 <label for="">Grado</label>
-                <input id="grado" type="text" placeholder="Grado" class="numero" name="grado" [(ngModel)]="materi.grado" />
+                <input id="grade" type="text" placeholder="Grado" class="numero" name="grade" [(ngModel)]="materi.grade" />
             </div>
             <div class="numeros-input">
                 <label for="">Creditos</label>
-                <input id="numCreditos" type="text" placeholder="Numero de creditos"  class="numero" name="numCreditos" [(ngModel)]="materi.numCreditos" />
+                <input id="credits" type="text" placeholder="Numero de creditos"  class="numero" name="credits" [(ngModel)]="materi.credits" />
             </div>
             <div class="numeros-input">
                 <label for="">Horas a la semana</label>
-                <input id="Horas" type="text"  placeholder="Horas por semana" class="numero" name="horasPorSemana" [(ngModel)]="materi.horasPorSemana" />
+                <input id="Horas" type="text"  placeholder="Horas por semana" class="numero" name="hours" [(ngModel)]="materi.hours" />
             </div>
         </div>
     
-        <button type="button" (click)="addMateria()">Agregar</button>
+        <button type="button" (click)="clickButton()">Agregar</button>
     </form>
 </div>

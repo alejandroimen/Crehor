@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Igrupo } from '../interfaces/igrupo';
 
 @Injectable({
@@ -6,16 +8,24 @@ import { Igrupo } from '../interfaces/igrupo';
 })
 export class GruposService {
 
-  constructor() { }
+  url: string = 'http://localhost:3000/groups/'
 
-  getAll(): Igrupo[] {
-    const gruposGuardados = localStorage.getItem('listaGrupos');
-    return gruposGuardados ? (JSON.parse(gruposGuardados) as Igrupo[]) : []
+  constructor(private _http: HttpClient) { }
+
+  private createAuthorizationHeader(): HttpHeaders {
+    const token = localStorage.getItem('jwtToken');
+    return new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+  }
+
+  getAll(): Observable<any> {
+    const headers = this.createAuthorizationHeader()
+    return this._http.get(this.url, { headers })
   }
 
   add(grupo: Igrupo){
-    let gruposGuardados = this.getAll()
-    gruposGuardados.push(grupo)
-    localStorage.setItem('listaGrupos', JSON.stringify(gruposGuardados))
+    const headers = this.createAuthorizationHeader()
+    return this._http.post(this.url, grupo, { headers });
   }
 }

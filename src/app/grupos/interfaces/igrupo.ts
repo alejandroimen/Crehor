@@ -1,5 +1,6 @@
 export interface Igrupo {
-    grado: number
-    grp: string
-    horarioAsignado: boolean
+    id: number
+    grade: number
+    group: string
+    hasSchedule: boolean
 }

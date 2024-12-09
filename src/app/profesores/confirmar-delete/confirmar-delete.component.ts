@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ProfesorService } from '../services/profesor.service';
+import { Iprofesor } from '../interfaces/Iprofesor';
 
 @Component({
   selector: 'app-confirmar-delete',
@@ -11,6 +12,8 @@ export class ConfirmarDeleteComponent {
   @Output() visibleChange = new EventEmitter<boolean>()
   @Input() i:number = -1
   @Output() iChange = new EventEmitter<number>()
+  @Input() profesores: Iprofesor[] = []
+  @Output() profesoresChange = new EventEmitter<Iprofesor[]>
 
   constructor(private profServ: ProfesorService) {}
 
@@ -21,8 +24,15 @@ export class ConfirmarDeleteComponent {
 
   confirmDelete(): void {
     
-    this.profServ.delete(this.i)
-    console.log('LOCALSTORAGE' + (localStorage.getItem('listaProfesores') ? localStorage.getItem('listaProfesores'):'nada') )
+    this.profServ.delete(this.i).subscribe(
+      response => {
+        console.log('usuario eliminado con exito', response);
+      },
+      error => {
+        console.log(this.i);
+        console.log('Error al eliminar', error);
+      }
+    )
     this.visibleChange.emit(!this.visible);
     this.iChange.emit(-1)
   }

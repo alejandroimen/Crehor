@@ -9,27 +9,33 @@ import { Igrupo } from '../interfaces/igrupo';
 export class GrupoFormComponent {
   @Input() visible: boolean = false
   @Output() visibleChange = new EventEmitter<boolean>()
+  @Input() grupos: Igrupo[] = []
+  @Output() gruposChange = new EventEmitter<Igrupo[]>()
   grupo: Igrupo = {
-    grado: 0,
-    grp: '',
-    horarioAsignado: false
+    id: 0,
+    grade: 0,
+    group: '',
+    hasSchedule: false
   }
 
-  constructor(private grupoService: GruposService){}
+  constructor(private grpSrv: GruposService){}
 
   changeVisibility(): void {
     this.visibleChange.emit(!this.visible)
   }
 
   addGrupo(){
-    let grupoAux: Igrupo = {
-      grado: this.grupo.grado,
-      grp: this.grupo.grp,
-      horarioAsignado: this.grupo.horarioAsignado
-    }
-    if(this.grupo.grado && this.grupo.grp){
-      this.grupoService.add(grupoAux)
-      console.log(localStorage.getItem('listaGrupos'));
+    if(this.grupo.grade && this.grupo.group){
+      this.grpSrv.add(this.grupo).subscribe(
+        (respuesta) => {
+          console.log('Grupo agregado con éxito:', respuesta);
+          this.grupos.push(this.grupo); // Agrega el nuevo grupo al arreglo de grupos
+          this.gruposChange.emit(this.grupos)
+        },
+        (error) => {
+          console.error('Error al agregar el grupo:', error);
+        }
+      );
       this.visibleChange.emit(!this.visible)
     }
     else {

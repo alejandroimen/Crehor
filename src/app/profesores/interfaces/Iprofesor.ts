@@ -1,8 +1,8 @@
 export interface Iprofesor {
-    codigo: string
-    nombre: string
-    apellido: string 
-    telefono: string
-    especialidad: string
-    titulo: string
+    id: number
+    name: string,
+    lastname: string,
+    phone: string,
+    specialism: number,
+    degree: string
 }

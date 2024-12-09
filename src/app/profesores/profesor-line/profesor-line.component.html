@@ -1,7 +1,7 @@
 <div class="line-profesor">
     <div class="texto-line">
-        <h4> {{"Profr. " + prof.nombre +" "+prof.apellido}} </h4>
-        <span> {{prof.especialidad}} </span>
+        <h4> {{"Profr. " + prof.name +" "+prof.lastname}} </h4>
+        <span> {{especialidades[prof.specialism-1].name}} </span>
     </div>
     <div class="iconos">
         <button (click)="openEdit()">

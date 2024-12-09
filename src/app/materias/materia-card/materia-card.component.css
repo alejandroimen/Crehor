@@ -47,7 +47,8 @@
 .btn-actions button {
     position: relative;
     width: 50%;
-    background: none;
+    min-height: 20px;
+    height: auto;
     border: none;
     transition: 0.2s;
 }

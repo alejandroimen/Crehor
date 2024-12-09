@@ -8,6 +8,8 @@ import { MateriasModule } from './materias/materias.module';
 import { ProfesoresModule } from "./profesores/profesores.module";
 import { HorarioModule } from "./horario/horario.module";
 import { HeaderComponent } from './standalone/header/header.component';
+import { FormsModule } from '@angular/forms';
+import { UsersModule } from './users/users.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { HeaderComponent } from './standalone/header/header.component';
     ProfesoresModule,
     HorarioModule,
     HeaderComponent,
-    CommonModule
+    CommonModule,
+    FormsModule,
+    UsersModule
 ],
   providers: [],
   bootstrap: [AppComponent]

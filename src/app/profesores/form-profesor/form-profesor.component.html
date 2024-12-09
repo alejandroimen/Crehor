@@ -5,16 +5,18 @@
             <button class="close-btn" (click)="changeVisibility()">x</button>
         </div>
         <label for="">Nombre</label>
-        <input id="nombre" type="text" placeholder="Nombre" name="nombre" [(ngModel)]="prof.nombre" /> 
+        <input id="nombre" type="text" placeholder="Nombre" name="name" [(ngModel)]="prof.name" /> 
         <label for="">Apellido(s)</label>
-        <input id="codigo" type="text" placeholder="Apellido" name="codigo" [(ngModel)]="prof.apellido" /> 
+        <input id="apellido" type="text" placeholder="Apellido" name="lastname" [(ngModel)]="prof.lastname" /> 
+        <label for="">Contraseña</label>
+        <input id="password" type="password" placeholder="Contraseña" name="password" [(ngModel)]="password" /> 
         <label for="">Telefono</label>
-        <input id="grado" type="text" placeholder="Grado" class="numero" name="telefono" [(ngModel)]="prof.telefono" />
-        <select name="especialidad" [value]="prof.especialidad" id="especialidad" [(ngModel)]="prof.especialidad">
-            <option *ngFor="let espe of especialidades" value={{espe}} > {{espe}} </option>
+        <input id="phone" type="text" placeholder="Numero telefonico" class="numero" name="phone" [(ngModel)]="prof.phone" />
+        <select name="especialidad" [value]="prof.specialism" id="especialidad" [(ngModel)]="prof.specialism">
+            <option *ngFor="let espe of especialidades" value={{espe.id}} > {{espe.name}} </option>
         </select>
         <label for="">Titulo</label>
-        <input id="numCreditos" type="text" placeholder="Titulo" name="titulo" [(ngModel)]="prof.titulo" />
+        <input id="numCreditos" type="text" placeholder="Titulo" name="degree" [(ngModel)]="prof.degree" />
         <button type="button" (click)="clickButton()">Agregar</button>
     </form>
 </div>
