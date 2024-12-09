@@ -1,6 +1,8 @@
 import { Iprofesor } from './../interfaces/Iprofesor';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ProfesorService } from '../services/profesor.service';
+import { Iespecialidad } from '../interfaces/iespecialidad';
+import { EspecialidadService } from '../services/especialidad.service';
 @Component({
   selector: 'app-form-profesor',
   templateUrl: './form-profesor.component.html',
@@ -10,25 +12,37 @@ export class FormProfesorComponent  {
   @Input() i:number = -1
   @Output() iChange = new EventEmitter<number>()
   @Input() visible: boolean = true
-  @Output() visibleChange = new EventEmitter<boolean>()
-  profesores!: Iprofesor[]
-  especialidades!: string[]
+  @Output() visibleChange = new EventEmitter<boolean>
+  especialidades!: Iespecialidad[]
+  @Input() profesores: Iprofesor[] = []
+  @Output() profesoresChange = new EventEmitter<Iprofesor[]>
+  password: string = ''
   @Input() prof : Iprofesor = {
-    codigo: '',
-    nombre: '',
-    apellido: '', 
-    telefono: '',
-    especialidad: '',
-    titulo: ''
+    id: 0,
+    name: '',
+    lastname: '',
+    phone: '',
+    specialism: 0,
+    degree: ''
   }
 
-  constructor(private profServ: ProfesorService) {
-    let especialidadString = localStorage.getItem("listaEspecialidades")
-    if(especialidadString){
-      this.especialidades = JSON.parse(especialidadString) 
-    }
-    this.profesores=profServ.getAll()
-    
+  constructor(private profServ: ProfesorService, espServ: EspecialidadService) {
+    profServ.getAll().subscribe(
+      response => {
+        this.profesores = response
+      },
+      error => {
+        console.log('Errorsito en form',error);
+      }
+    )
+    espServ.getAll().subscribe(
+      response => {
+        this.especialidades = response
+      },
+      error => {
+        console.log('errorsito en epsecialidades', error);
+      }
+    )
   }
   
   changeVisibility(): void {
@@ -37,30 +51,48 @@ export class FormProfesorComponent  {
 
   clickButton(): number {
     console.log('Indice ' ,this.i);
-    
     let auxProf : Iprofesor = {
-      codigo: '',
-      nombre: this.prof.nombre,
-      apellido: this.prof.apellido, 
-      telefono: this.prof.telefono,
-      especialidad: this.prof.especialidad,
-      titulo: this.prof.titulo
+      id: this.prof.id,
+      name: this.prof.name,
+      lastname: this.prof.lastname,
+      phone: this.prof.phone,
+      specialism: this.prof.specialism,
+      degree: this.prof.degree
     }
-    if(!(auxProf.nombre && auxProf.apellido && auxProf.telefono && auxProf.especialidad && auxProf.titulo)){
+    if(!(this.password && auxProf.name && auxProf.lastname && auxProf.phone && auxProf.specialism && auxProf.degree)){
       alert("Completa los campos plis uwu")
       return 0
     }
     if(this.i<0){
-      this.profServ.add(auxProf)
-      localStorage.setItem("listaMaterias", JSON.stringify(this.profesores));
-      console.log('PUSHEO' + this.profesores)
-      console.log('LOCALSTORAGE' + (localStorage.getItem('listaProfesores') ? localStorage.getItem('listaProfesores'):'nada') );
+      this.profServ.add(auxProf, this.password).subscribe(
+        (respuesta) => {
+          console.log('Profesor agregado con éxito:', respuesta);
+          console.log('Antes:', this.profesores);
+          
+          this.profesores = [...this.profesores, respuesta]
+          console.log('Despues: ',this.profesores);
+          this.profesoresChange.emit(this.profesores);
+        },
+        (error) => {
+          console.error('Error al agregar el grupo:', error);
+        }
+      )
       this.visibleChange.emit(!this.visible);
     }
     else{
-      this.profServ.edit(this.i, auxProf)
-      console.log('Actualizacion' + this.profesores)
-      console.log('LOCALSTORAGE' + (localStorage.getItem('listaProfesores') ? localStorage.getItem('listaProfesores'):'nada') );
+      console.log(auxProf);
+      
+      this.profServ.edit(this.i, auxProf).subscribe(
+        response => {
+          console.log('Usuario actualizado correctamente', response);
+          this.profesores[this.i]= response
+          this.profesoresChange.emit(this.profesores);
+        },
+        error => {
+          console.log('Errorsito al editar en ', this.i);
+          console.log(error);    
+        }
+      )
       this.visibleChange.emit(!this.visible);
     }
     this.iChange.emit(-1);

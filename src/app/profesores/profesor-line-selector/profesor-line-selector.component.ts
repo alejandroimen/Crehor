@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Iprofesor } from '../interfaces/Iprofesor';
+import { Icurso } from '../../materias/interfaces/icurso';
 
 @Component({
   selector: 'app-profesor-line-selector',
@@ -7,28 +8,43 @@ import { Iprofesor } from '../interfaces/Iprofesor';
   styleUrl: './profesor-line-selector.component.css'
 })
 export class ProfesorLineSelectorComponent {
-  @Input() isSelected: boolean = false; 
-  @Output() profSelectedChange = new EventEmitter<Iprofesor>()
-  @Input() profSelected: Iprofesor={
-    codigo: '',
-    nombre: '',
-    apellido: '',
-    telefono: '',
-    especialidad: '',
-    titulo: ''
+  @Input() cursoSelected: Icurso = {
+    materia:{
+      id: 0,
+      name: '',
+      credits: 0,
+      hours:0,
+      grade: 0,
+      state: true
+    },
+    profr: {
+      id: 0,
+      name: '',
+      lastname: '',
+      phone: '',
+      specialism: 0,
+      degree: ''
+    },
+    grupo: {
+      id: 0,
+      grade: 0,
+      group: '',
+      hasSchedule: false
+    }
   }
+  @Output() cursoSelectedChange = new EventEmitter<Icurso>()
+  @Input() isSelected: boolean = false; 
   @Input() prof: Iprofesor={
-    codigo: '',
-    nombre: '',
-    apellido: '',
-    telefono: '',
-    especialidad: '',
-    titulo: ''
+    id: 0,
+    name: '',
+    lastname: '',
+    phone: '',
+    specialism: 0,
+    degree: ''
   }
 
   seleccionar():void {
-    this.profSelected = this.prof
-    console.log(this.profSelected);
-    this.profSelectedChange.emit(this.profSelected)
+    this.cursoSelected.profr = this.prof
+    this.cursoSelectedChange.emit(this.cursoSelected)
   }
 }

@@ -8,40 +8,72 @@ import { MateriaService } from '../materia.service';
 })
 export class MateriaFormComponent {
   @Input() i:number = -1
+  @Output() iChange = new EventEmitter<number>()
   @Input() visible: boolean = true
   @Output() visibleChange = new EventEmitter<boolean>()
-  materias!: Imateria[]
   @Input() materi : Imateria = {
-    codigo: 0,
-    nombre: '',
-    numCreditos: 0,
-    horasPorSemana: 0,
-    grado: 0,
-    estado: true
+    id: 0,
+    name: '',
+    credits: 0,
+    hours: 0,
+    grade: 0,
+    state: true
   }
-  @Output() eventEmitter = new EventEmitter<Imateria>()
+  @Input() materias: Imateria[] = []
+  @Output() materiasChange = new EventEmitter<Imateria>()
+  
+  @Input() update: boolean = true
+  @Output() updateChange = new EventEmitter<boolean>()
 
-  constructor(private matServ: MateriaService){
-    this.materias = matServ.getAll()
-  }
+  constructor(private matServ: MateriaService){ }
 
 
   changeVisibility(): void {
     this.visibleChange.emit(!this.visible); 
   }
 
-  addMateria(): void {
+  clickButton(): number {
+    console.log('Indice ' ,this.i);
+    
     let auxMat : Imateria = {
-      codigo: this.materias.length-1,
-      nombre: this.materi.nombre,
-      numCreditos: this.materi.numCreditos,
-      horasPorSemana: this.materi.horasPorSemana,
-      grado: this.materi.grado,
-      estado: this.materi.estado
+      id: 0,
+      name: this.materi.name,
+      credits: this.materi.credits,
+      hours: this.materi.hours,
+      grade: this.materi.grade,
+      state: this.materi.state
     }
-    this.matServ.add
-    localStorage.setItem("listaMaterias", JSON.stringify(this.materias));
-    console.log('PUSHEO' + this.materias)
-    console.log('LOCALSTORAGE' + localStorage.getItem('listaMaterias'));
+    if(!(auxMat.name && auxMat.grade && auxMat.credits && auxMat.hours && auxMat.state)){
+      alert("Completa los campos plis uwu")
+      return 0
+    }
+    if(this.i<0){
+      this.matServ.add(auxMat).subscribe(
+        response => {
+          alert('Add todo bien :D ')
+          console.log(response);          
+        },
+        error =>{
+          alert('algo add salio mal')
+          console.log(error);
+        }
+      )
+    }
+    else{
+      this.matServ.edit(this.i, auxMat).subscribe(
+        response => {
+          alert('Edit todo bien :D ')
+          console.log(response);          
+        },
+        error =>{
+          alert('algo edit salio mal')
+          console.log(error);
+        }
+      )
+    }
+    this.iChange.emit(-1)
+    this.updateChange.emit(true)
+    this.visibleChange.emit(!this.visible)
+    return 0
   }
 }

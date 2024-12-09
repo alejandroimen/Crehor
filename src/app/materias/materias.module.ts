@@ -5,15 +5,17 @@ import { MateriaCardComponent } from './materia-card/materia-card.component';
 import { CardCompleteComponent } from './card-complete/card-complete.component';
 import { MateriaFormComponent } from './materia-form/materia-form.component';
 import { VistaVisualizarMateriasComponent } from './vista-visualizar-materias/vista-visualizar-materias.component';
-
-
+import { ConfirmarDeleteMateriaComponent } from './confirmar-delete-materia/confirmar-delete-materia.component';
+import { VistaMateriasComponent } from './vista-materias/vista-materias.component';
 
 @NgModule({
   declarations: [
     MateriaCardComponent,
     CardCompleteComponent,
     MateriaFormComponent,
-    VistaVisualizarMateriasComponent
+    VistaVisualizarMateriasComponent,
+    ConfirmarDeleteMateriaComponent,
+    VistaMateriasComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,9 @@ import { VistaVisualizarMateriasComponent } from './vista-visualizar-materias/vi
     MateriaCardComponent,
     CardCompleteComponent,
     MateriaFormComponent,
-    VistaVisualizarMateriasComponent
+    VistaVisualizarMateriasComponent,
+    ConfirmarDeleteMateriaComponent,
+    VistaMateriasComponent
   ]
 })
 export class MateriasModule {}

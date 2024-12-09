@@ -1,6 +1,8 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Iprofesor } from '../interfaces/Iprofesor';
 import { ProfesorService } from '../services/profesor.service';
+import { EspecialidadService } from '../services/especialidad.service';
+import { Iespecialidad } from '../interfaces/iespecialidad';
 @Component({
   selector: 'app-profesor-line',
   templateUrl: './profesor-line.component.html',
@@ -14,24 +16,45 @@ export class ProfesorLineComponent {
   @Input() i:number = -1
   @Output() iChange = new EventEmitter<number>()
   @Input() prof: Iprofesor={
-    codigo: '',
-    nombre: '',
-    apellido: '',
-    telefono: '',
-    especialidad: '',
-    titulo: ''
+    id: 0,
+    name: '',
+    lastname: '',
+    phone: '',
+    specialism: 0,
+    degree: ''
   }
+  profesores: Iprofesor[] = []
+  especialidades: Iespecialidad[] = []
 
-  constructor(private profServ: ProfesorService) {}
+  constructor(private profServ: ProfesorService, private speciServ: EspecialidadService){
+    profServ.getAll().subscribe(
+      response => {
+        this.profesores = response
+        console.log(this.profesores);
+      },
+      error => {
+        console.log('Errorsito en: ', error);
+      }
+    )
+    speciServ.getAll().subscribe(
+      response => {
+        this.especialidades = response
+        console.log(this.profesores);
+      },
+      error => {
+        console.log('Errorsito en: ', error);
+      }
+    )
+  }
   
   openDelete(): void {
-    this.i = this.profServ.getAll().findIndex(profr=> profr.codigo === this.prof.codigo)
+    this.i = this.prof.id
     this.visibleDeleteChange.emit(!this.visibleDelete);
     this.iChange.emit(this.i); // emite el valor actualizado
   }
 
   openEdit(): void {
-    this.i = this.profServ.getAll().findIndex(profr=> profr.codigo === this.prof.codigo)
+    this.i = this.prof.id
     this.visibleChange.emit(!this.visible);
     this.iChange.emit(this.i);
   }

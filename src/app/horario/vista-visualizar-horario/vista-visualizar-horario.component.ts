@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Horario } from '../interfaces/horario';
 @Component({
   selector: 'app-vista-visualizar-horario',
   templateUrl: './vista-visualizar-horario.component.html',

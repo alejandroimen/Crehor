@@ -1,11 +1,11 @@
 <button [class.selected]= "isSelected" class="card-complete" (click)="seleccionar()">
     <div class="left-side-card">   
-        <h3> {{materia.nombre}} </h3>
-        <span> {{materia.codigo}} </span>
-        <p> {{materia.numCreditos}} </p>
-        <p> {{profr}} </p> 
+        <h3> {{curso.materia.name}} </h3>
+        <span> {{curso.materia.id}} </span>
+        <p> {{curso.materia.credits}} </p>
+        <p> {{curso.profr.name + " " +curso.profr.lastname}} </p> 
 
-        <p> {{materia.horasPorSemana}} </p>
+        <p> {{curso.materia.hours}} </p>
     </div>
-    <h4> {{materia.grado}} </h4>
+    <h4> {{curso.materia.grade}} </h4>
 </button>

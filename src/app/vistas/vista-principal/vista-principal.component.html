@@ -1,5 +1,0 @@
-<section class="vista-grupos">
-    <button class="btn-add-grupo" (click)="changeVisibilityForm()">+</button>
-    <app-grupo-form [(visible)]="formVisible" *ngIf="formVisible"></app-grupo-form>
-    <app-grupo-card *ngFor="let grupo of grupos" [grado] = "grupo.grado" [grupo]="grupo.grp" [horario]="grupo.horarioAsignado"></app-grupo-card>
-</section>

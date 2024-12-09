@@ -1,0 +1,68 @@
+.container-modal {
+    z-index: 100;
+    position: absolute;
+    top: 0%;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    backdrop-filter: brightness(0.8);
+}
+
+.container-msg {
+    position: relative;
+    width: 35vw;
+    height: 40vh;
+    background-color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    box-sizing: border-box;
+    border-radius: 35px;
+}
+
+.container-msg h1 {
+    font-size: 36px;
+    text-align: center;
+    margin: 0;
+}
+
+.repuestas {
+    position: relative;
+    display: flex;
+    height: 10vh;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.cancel-btn {
+    position: relative;
+    width: 45%;
+    height: 100%;
+    border: 3px solid var(--azul);
+    border-radius: 25px;
+    color: var(--azul);
+    background-color: var(--blanco);
+    transition: 0.2s;
+    font-size: 18px;
+}
+
+.delete-btn{
+    position: relative;
+    width: 45%;
+    height: 100%;
+    border: 3px solid var(--azul);
+    border-radius: 25px;
+    background-color: var(--celeste);
+    color: var(--blanco);
+    transition: 0.2s;
+    font-size: 18px;
+}
+
+.repuestas button:hover {
+    filter: brightness(0.8);
+    transition: 0.2s;
+}

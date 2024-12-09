@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Imateria } from './materias/interfaces/imateria';
 import { Iprofesor } from './profesores/interfaces/Iprofesor';
+import { GruposService } from './grupos/services/grupos.service';
+import { MateriaService } from './materias/materia.service';
+import { ProfesorService } from './profesores/services/profesor.service';
 
 @Component({
   selector: 'app-root',
@@ -11,78 +14,76 @@ export class AppComponent {
   title = 'App-web';
   materias: Imateria[] = [
     {
-      codigo: 0,
-      nombre: 'Algebra',
-      numCreditos: 10,
-      horasPorSemana: 5,
-      grado: 1,
-      estado: true
+      id: 0,
+      name: 'Fundamentos de bases de datos',
+      credits: 10,
+      hours: 6,
+      grade: 3,
+      state: true
     },
     {
-      codigo: 1,
-      nombre: 'Fisica',
-      numCreditos: 10,
-      horasPorSemana: 6,
-      grado: 3,
-      estado: true
+      id: 0,
+      name: 'Programación Visual',
+      credits: 10,
+      hours: 7,
+      grade: 3,
+      state: true
     },
     {
-      codigo: 2,
-      nombre: 'Expresion oral',
-      numCreditos: 10,
-      horasPorSemana: 3,
-      grado: 1,
-      estado: true
+      id: 0,
+      name: 'Algoritmos',
+      credits: 10,
+      hours: 8,
+      grade: 1,
+      state: true
     },
     {
-      codigo: 3,
-      nombre: 'Quimica',
-      numCreditos: 10,
-      horasPorSemana: 4,
-      grado: 2,
-      estado: true
+      id: 0,
+      name: 'Estructuras de datos avanzadas',
+      credits: 10,
+      hours: 4,
+      grade: 3,
+      state: true
     },
     {
-      codigo: 4,
-      nombre: 'Calculo diferencial',
-      numCreditos: 10,
-      horasPorSemana: 6,
-      grado: 3,
-      estado: true
-    }
-  ]
-  profesores: Iprofesor[] = [
-    {
-      codigo: '',
-      nombre: 'Julian',
-      apellido: 'Hernandez',
-      telefono: '961234567',
-      especialidad: 'Física',
-      titulo: 'Maestría'
+      id: 0,
+      name: 'Algebra',
+      credits: 10,
+      hours: 5,
+      grade: 1,
+      state: true
     },
     {
-      codigo: '',
-      nombre: 'Araceli',
-      apellido: 'Gutierrez',
-      telefono: '961234567',
-      especialidad: 'Humanidades',
-      titulo: 'Maestría'
+      id: 0,
+      name: 'Fisica',
+      credits: 10,
+      hours: 6,
+      grade: 3,
+      state: true
     },
     {
-      codigo: '',
-      nombre: 'Beatriz',
-      apellido: 'Pinzon',
-      telefono: '961234567',
-      especialidad: 'Estadistica',
-      titulo: 'Doctorado'
+      id: 0,
+      name: 'Expresion oral',
+      credits: 10,
+      hours: 3,
+      grade: 1,
+      state: true
     },
     {
-      codigo: '',
-      nombre: 'Armando',
-      apellido: 'Mendoza',
-      telefono: '961234567',
-      especialidad: 'Finanzas',
-      titulo: 'Doctorado'
+      id: 0,
+      name: 'Quimica',
+      credits: 10,
+      hours: 4,
+      grade: 2,
+      state: true
+    },
+    {
+      id: 0,
+      name: 'Calculo diferencial',
+      credits: 10,
+      hours: 6,
+      grade: 3,
+      state: true
     }
   ]
   especialidades: string[] = [
@@ -92,15 +93,9 @@ export class AppComponent {
     'Lengua'
   ]
 
-  ngOnInit(){
-    if(!localStorage.getItem('listaMaterias')){
-      localStorage.setItem("listaMaterias", JSON.stringify(this.materias));
-    }
-    if(!localStorage.getItem('listaProfesores')){
-      localStorage.setItem("listaProfesores", JSON.stringify(this.profesores))
-    }
-    if(!localStorage.getItem('listaEspecialidades')){
-      localStorage.setItem("listaEspecialidades", JSON.stringify(this.especialidades))
-    }
+  constructor(private grpServ: GruposService, private prfServ: ProfesorService, private matServ: MateriaService){
+    this.materias.forEach(mat => {
+      matServ.add(mat)
+    });
   }
 }

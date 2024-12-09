@@ -1,6 +1,6 @@
-import { Icurso } from "../../materias/interfaces/icurso"
 export interface Horario {
-    dia: number
-    hora: number
-    curso: Icurso   
+    day: number
+    hour: number  
+    teacherId: number
+    subjectId: number
 }

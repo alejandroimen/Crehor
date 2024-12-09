@@ -1,39 +1,42 @@
 import { Injectable } from '@angular/core';
 import { Iprofesor } from '../interfaces/Iprofesor';
-
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class ProfesorService {
 
-  constructor() { }
+  url: string = 'http://localhost:3000'
 
-  getAll(): Iprofesor[] {
-    const gruposGuardados = localStorage.getItem('listaProfesores');
-    return gruposGuardados ? (JSON.parse(gruposGuardados) as Iprofesor[]) : []
+  constructor( private _http: HttpClient ) { }
+
+  private createAuthorizationHeader(): HttpHeaders {
+    const token = localStorage.getItem('jwtToken');
+    return new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
   }
 
-  add(profesor: Iprofesor): void{
-    const fecha = new Date().toISOString().slice(2, 10).replace(/-/g, '');
-    const hash = btoa(profesor.nombre + profesor.apellido).slice(0, 4).toUpperCase();
-    profesor.codigo = `${fecha}-${hash}`
-    let profesoresGuardados = this.getAll()
-    profesoresGuardados.push(profesor)
-    localStorage.setItem('listaProfesores', JSON.stringify(profesoresGuardados))
+  getAll(): Observable<any> {
+    const headers = this.createAuthorizationHeader()
+    return this._http.get(`${this.url}/teachers/`, { headers })
   }
 
-  edit(index: number, profesor: Iprofesor): void{
-    let profesoresGuardados = this.getAll()
-    profesor.codigo = profesoresGuardados[index].codigo
-    profesoresGuardados[index] = profesor
-    localStorage.setItem('listaProfesores', JSON.stringify(profesoresGuardados))
+  add(profesor: Iprofesor, password: string): Observable<any> {
+    const headers = this.createAuthorizationHeader()
+    return this._http.post(`${this.url}/register/`, 
+                            {username: profesor.name, password: password, isTeacher: true, teacher: profesor}, 
+                            { headers });
   }
 
-  delete(index: number): void{
-    let profesoresGuardados = this.getAll()
-    console.log(index,'A eliminar',profesoresGuardados[index]);
-    
-    profesoresGuardados.splice(index, 1)
-    localStorage.setItem('listaProfesores', JSON.stringify(profesoresGuardados))
+  edit(index: number, profesor: Iprofesor): Observable<any> {
+    const headers = this.createAuthorizationHeader()
+    return this._http.put(`${this.url}/teachers/${index}`, profesor, { headers })
+  }
+
+  delete(index: number): Observable<any>{
+    const headers = this.createAuthorizationHeader()
+    return this._http.delete(`${this.url}/teachers/${index}`, { headers })
   }
 }

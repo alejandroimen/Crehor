@@ -1,8 +1,8 @@
 export interface Imateria {
-    codigo: number
-    nombre: string
-    numCreditos: number
-    horasPorSemana: number
-    grado: number
-    estado: boolean
+    id: number
+    name: string
+    credits: number
+    hours: number
+    grade: number
+    state: boolean
 }
