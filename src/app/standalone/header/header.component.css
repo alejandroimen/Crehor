@@ -1,0 +1,36 @@
+header {
+    background-color: var(--azul);
+    width: 100vw;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 40px 0px 20px;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+}
+
+header img {
+    height: 70%;
+}
+
+header nav {
+    display: flex;
+    gap: 20px;
+}
+
+header nav a {
+    color: var(--blanco);
+    text-decoration: none;
+    letter-spacing: .8px;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+button i {
+    color: var(--blanco);
+    font-size: 18px;
+}

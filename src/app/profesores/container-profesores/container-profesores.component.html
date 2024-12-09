@@ -1,0 +1,7 @@
+<section>
+    <button>Agregar profesor</button>
+    <app-profesor-line *ngFor="let profe of profesores" 
+        [prof]="profe" ></app-profesor-line>
+
+    <app-form-profesor></app-form-profesor>
+</section>

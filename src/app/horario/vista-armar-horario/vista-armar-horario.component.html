@@ -1,0 +1,14 @@
+<section class="armar-horario-container">
+    <div class="materias-seleccionador">
+        <app-card-complete *ngFor="let curso of cursos"
+            [curso]="curso"
+            [(cursoSelected)]="cursSelected"
+            [isSelected] = "curso === cursSelected"
+        ></app-card-complete>
+    </div>
+    <app-pantilla-dias-horario [cursoCandidato]="cursSelected" (updateSchedule)="onScheduleUpdate($event)"
+    ></app-pantilla-dias-horario>
+    <button class="generar-horario-btn" (click)="generate()"  >
+        Generar
+    </button>
+</section>

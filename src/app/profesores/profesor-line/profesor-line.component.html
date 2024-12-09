@@ -1,0 +1,14 @@
+<div class="line-profesor">
+    <div class="texto-line">
+        <h4> {{"Profr. " + prof.name +" "+prof.lastname}} </h4>
+        <span> {{especialidades[prof.specialism-1].name}} </span>
+    </div>
+    <div class="iconos"*ngIf="teacherId==='16'">
+        <button (click)="openEdit()">
+            <i class="fa-solid fa-pen"></i> 
+        </button>
+        <button (click)="openDelete()">
+            <i class="fa-solid fa-trash" style="color: rgb(195, 23, 34);"></i>
+        </button>
+    </div>
+</div>

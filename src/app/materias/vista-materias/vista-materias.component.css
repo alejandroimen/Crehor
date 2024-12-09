@@ -1,0 +1,26 @@
+.vista-materias {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90vw;
+    gap: 2vw;
+}
+
+.btn-add-materia {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 20vw;
+    height: 30vh;
+    border-radius: 20px;
+    border: solid 3px var(--azul);
+    box-sizing: border-box;
+    color: var(--blanco);
+    font-size: 72px;
+    background-color: var(--celeste);
+    transition: .2s;
+}
+
+.btn-add-materia:hover {
+    filter: brightness(0.8);
+    transition: .2s;
+}

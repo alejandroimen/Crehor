@@ -1,0 +1,17 @@
+<table class="plantilla-dias">
+    <tr>
+        <th class="celda-hora" ></th>
+        <th class="dia" *ngFor="let dia of dias">
+            {{dia}}
+        </th>
+    </tr>
+    <tr>
+        <tr *ngFor="let row of horario; let hour = index">
+            <td class="celda-hora"> 
+                {{hour+7}}:00 - {{hour+8}}:00
+            </td>
+            <td *ngFor="let cell of row; let day = index">
+              {{ cell ? cell.subject : '' }}
+            </td>
+          </tr>
+</table>

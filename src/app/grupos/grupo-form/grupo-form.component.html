@@ -1,0 +1,14 @@
+<div class="container-form">
+    <form action="" class="form">
+        <div class="header-form">
+            <h1>Agregar grupo</h1>
+            <button class="close-btn" (click)="changeVisibility()">x</button>
+        </div>
+        <label for="">Grado:</label>
+        <input placeholder="Grado" type="number" name="grade" [(ngModel)]="grupo.grade">
+    
+        <label for="">Grupo: </label>
+        <input placeholder="Grupo" type="text" name="group" [(ngModel)]="grupo.group">
+        <button type="button" (click)="addGrupo()">Agregar</button>
+    </form>
+</div>

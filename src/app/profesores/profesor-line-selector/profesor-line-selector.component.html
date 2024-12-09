@@ -1,0 +1,9 @@
+<button [class.selected]="isSelected" class="line-profesor-selector" (click)="seleccionar()">
+    <div class="texto-line">
+        <h4> {{"Profr. " + prof.name +" "+prof.lastname}} </h4>
+        <span> {{prof.specialism}} </span>
+    </div>
+    <div class="seleccionador">
+        <i class="fa-solid fa-check"></i>
+    </div>
+</button>

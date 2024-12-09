@@ -1,0 +1,31 @@
+<div class="container-form">
+    <form class="form" action="">
+        <div class="header-form">
+            <h1>Agregar materia</h1>
+            <button class="close-btn" (click)="changeVisibility()">x</button>
+        </div>
+        <label for="">Nombre</label>
+        <input id="name" type="text" placeholder="Nombre" name="name" [(ngModel)]="materi.name" /> 
+        <select [value]="" name="state" id="state" [(ngModel)]="materi.state">
+            <option value="" disabled selected>Selecciona una opcion</option>
+            <option [value]="true">Activa</option>
+            <option [value]="false">Inactiva</option>
+        </select>
+        <div>
+            <div class="numeros-input">
+                <label for="">Grado</label>
+                <input id="grade" type="text" placeholder="Grado" class="numero" name="grade" [(ngModel)]="materi.grade" />
+            </div>
+            <div class="numeros-input">
+                <label for="">Creditos</label>
+                <input id="credits" type="text" placeholder="Numero de creditos"  class="numero" name="credits" [(ngModel)]="materi.credits" />
+            </div>
+            <div class="numeros-input">
+                <label for="">Horas a la semana</label>
+                <input id="Horas" type="text"  placeholder="Horas por semana" class="numero" name="hours" [(ngModel)]="materi.hours" />
+            </div>
+        </div>
+    
+        <button type="button" (click)="clickButton()">Agregar</button>
+    </form>
+</div>

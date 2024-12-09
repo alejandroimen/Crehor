@@ -1,0 +1,21 @@
+<table class="plantilla-dias">
+    <tr>
+        <th class="celda-hora" ></th>
+        <th class="dia" *ngFor="let dia of dias">
+            {{dia}}
+        </th>
+    </tr>
+    <tr>
+        <tr *ngFor="let row of schedule; let hour = index">
+            <td class="celda-hora"> 
+                {{hour+7}}:00 - {{hour+8}}:00
+            </td>
+            <td
+              *ngFor="let cell of row; let day = index"
+              [class.placeholder]="!cell && selectedCard"
+              [class.locked]="cell?.locked"
+              (click)="onCellClick(hour, day)">
+              {{ cell?.name || (cursoCandidato.materia.name && !cell ? cursoCandidato.materia.name : '') }}
+            </td>
+          </tr>
+</table>

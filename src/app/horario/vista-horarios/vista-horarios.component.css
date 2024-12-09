@@ -1,0 +1,61 @@
+.vista-horarios {
+    position: relative;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+}
+
+.add-btn {
+    width: 80%;
+    height: 75px;
+    background-color: var(--celeste);
+    color: var(--blanco);
+    font-size: 48px;
+    font-weight: 400;
+    border-radius: 20px;
+    border: solid 3px var(--azul);
+    transition: .2s;
+    text-align: center;
+}
+.add-btn:hover {
+    filter: brightness(0.8);
+    transition: .2s;
+}
+
+.horario-grupo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 75px;
+    border-radius: 20px;
+    border: solid 3px var(--azul);
+    padding: 0px 40px;
+    box-sizing: border-box;
+    transition: 0.2s;
+}
+
+.horario-grupo:hover {
+    background-color: var(--cielo);
+    transition: 0.2s;
+}
+
+.horario-grupo p {
+    font-size: 18px;
+}
+
+.icons-actions {
+    display: flex;
+    gap: 20px;
+}
+
+.icons-actions i {
+    font-size: 18px;
+}
+
+.delete {
+    color: var(--rojo);
+}

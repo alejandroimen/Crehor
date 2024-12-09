@@ -1,0 +1,45 @@
+.line-profesor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80vw;
+    border-radius: 15px;
+    border: solid var(--azul) 3px;
+    margin-bottom: 10px;
+    padding: 0px 20px;
+    box-sizing: border-box;
+}
+
+.texto-line {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.texto-line h4 {
+    letter-spacing: 0.5px;
+    width: 80%;
+}
+.texto-line span {
+    width: 20%;
+}
+
+.iconos {
+    width: 9%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+.iconos button {
+    background: none;
+    border: none;
+    transition: 0.2s;
+}
+.iconos button:hover {
+    transform: scale(1.2);
+    transition: 0.2s;
+}
+.iconos button i {
+    font-size: 18px;
+}

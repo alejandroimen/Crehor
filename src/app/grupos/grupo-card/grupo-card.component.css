@@ -1,0 +1,33 @@
+.grupo-card {
+    width: 17vw;
+    height: 10vw;
+    border: solid 3px var(--azul);
+    border-radius: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding:0px 30px;
+}
+.grupo-card h4 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0%;
+    color: var(--azul);
+}
+.grupo-card p {
+    margin: 20px 0px 0px 0px;
+    font-weight: 100;
+    font-style: italic;
+    color: var(--azul)
+} 
+.ver-horario {
+    margin: 20px 0px 0px 0px;
+    font-weight: 600;
+    font-size: 14px;
+    width: 100%;
+    color: var(--celeste);
+    text-decoration: underline;
+    background: none;
+    border: none;
+}
